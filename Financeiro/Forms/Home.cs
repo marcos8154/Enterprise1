@@ -7,6 +7,7 @@ using Financeiro.Controllers;
 using Financeiro.Enums;
 using Financeiro.Interfaces;
 using Entidades;
+using Financeiro.UserControls.MdlAdministracao.Consultas;
 
 namespace Financeiro
 {
@@ -85,6 +86,17 @@ namespace Financeiro
                 mdlEstoque.Visible = true;
                 mdlPessoas.Visible = true;
             }
+        }
+
+        private void btUsuarios_Click(object sender, EventArgs e)
+        {
+            IManagedUserControl muc = new UC_Usuarios();
+            windowManager.AddOrShow(muc, "Usuários", "UC_USR-4575", false);
+        }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            windowManager.CloseAll();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Financeiro.Forms
             InitializeComponent();
 
             Log.Configurar();
-
+          
             List<Usuarios> usuarios = UsuariosController.Listar("");
 
             if(usuarios.Count == 0)
@@ -43,19 +43,7 @@ namespace Financeiro.Forms
         {
             if(e.KeyCode == Keys.Enter)
             {
-                this.Visible = false;
-                if (UsuariosController.EfetuaLogin(txUsuario.Text, txSenha.Text))
-                {
-                    Home home = new Home();
-                    this.Hide();
-                    home.ShowDialog();
-                }
-
-                txUsuario.Text = string.Empty;
-                txSenha.Text = string.Empty;
-               
-                this.Visible = true;
-                txUsuario.Focus();
+                Logon();
             }
         }
 
@@ -82,19 +70,19 @@ namespace Financeiro.Forms
             txUsuario.Focus();
         }
 
-        private void btLogin_Yb_Click()
+        private void txUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txSenha.Focus();
+        }
+
+        private void btOk_Yb_Click()
         {
             Logon();
         }
 
-        private void btEncerrar_Yb_Click()
+        private void btCancelar_Yb_Click()
         {
             System.Environment.Exit(0);
-        }
-
-        private void txUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) txSenha.Focus();
         }
     }
 }

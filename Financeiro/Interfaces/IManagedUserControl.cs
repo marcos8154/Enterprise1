@@ -15,6 +15,6 @@ namespace Financeiro.Interfaces
 
         string WindowID { get; set; }
 
-        bool IsValid { get; set; }
+        bool IsValid();
     }
 }

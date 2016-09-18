@@ -67,7 +67,7 @@ namespace Financeiro.Controllers
                 managedWindow.CURRENT_FORM.WindowState = FormWindowState.Maximized;
             }
 
-            if (!managedWindow.ManagedUserControl.IsValid) return;
+            if (!managedWindow.ManagedUserControl.IsValid()) return;
 
             var test = from window in managedsWindows where window.WindowID == windowID select window;
 

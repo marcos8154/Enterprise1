@@ -38,6 +38,8 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btOk = new Financeiro.UserControls.Especiais.YellowButton();
+            this.btCancelar = new Financeiro.UserControls.Especiais.YellowButton();
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -49,8 +51,6 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.btEncerrar = new Financeiro.UserControls.Especiais.YellowButton();
             this.btLogin = new Financeiro.UserControls.Especiais.YellowButton();
-            this.yellowButton1 = new Financeiro.UserControls.Especiais.YellowButton();
-            this.yellowButton2 = new Financeiro.UserControls.Especiais.YellowButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -165,8 +165,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.yellowButton2);
-            this.panel2.Controls.Add(this.yellowButton1);
+            this.panel2.Controls.Add(this.btOk);
+            this.panel2.Controls.Add(this.btCancelar);
             this.panel2.Controls.Add(this.line3);
             this.panel2.Controls.Add(this.line2);
             this.panel2.Controls.Add(this.labelX9);
@@ -182,6 +182,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(557, 313);
             this.panel2.TabIndex = 0;
+            // 
+            // btOk
+            // 
+            this.btOk.ButtonFont = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btOk.ButtonMargin = new System.Windows.Forms.Padding(3);
+            this.btOk.ButtonPadding = new System.Windows.Forms.Padding(0);
+            this.btOk.ButtonText = "OK";
+            this.btOk.Location = new System.Drawing.Point(326, 251);
+            this.btOk.Name = "btOk";
+            this.btOk.Size = new System.Drawing.Size(74, 26);
+            this.btOk.TabIndex = 14;
+            this.btOk.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.btOk_Yb_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.ButtonFont = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.ButtonMargin = new System.Windows.Forms.Padding(3);
+            this.btCancelar.ButtonPadding = new System.Windows.Forms.Padding(0);
+            this.btCancelar.ButtonText = "Encerrar";
+            this.btCancelar.Location = new System.Drawing.Point(406, 251);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(116, 26);
+            this.btCancelar.TabIndex = 13;
+            this.btCancelar.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.btCancelar_Yb_Click);
             // 
             // line3
             // 
@@ -304,7 +328,6 @@
             this.btEncerrar.Name = "btEncerrar";
             this.btEncerrar.Size = new System.Drawing.Size(120, 26);
             this.btEncerrar.TabIndex = 6;
-            this.btEncerrar.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.btEncerrar_Yb_Click);
             // 
             // btLogin
             // 
@@ -316,29 +339,6 @@
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(69, 26);
             this.btLogin.TabIndex = 5;
-            this.btLogin.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.btLogin_Yb_Click);
-            // 
-            // yellowButton1
-            // 
-            this.yellowButton1.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yellowButton1.ButtonMargin = new System.Windows.Forms.Padding(3);
-            this.yellowButton1.ButtonPadding = new System.Windows.Forms.Padding(0);
-            this.yellowButton1.ButtonText = "buttonX1";
-            this.yellowButton1.Location = new System.Drawing.Point(406, 251);
-            this.yellowButton1.Name = "yellowButton1";
-            this.yellowButton1.Size = new System.Drawing.Size(116, 26);
-            this.yellowButton1.TabIndex = 13;
-            // 
-            // yellowButton2
-            // 
-            this.yellowButton2.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yellowButton2.ButtonMargin = new System.Windows.Forms.Padding(3);
-            this.yellowButton2.ButtonPadding = new System.Windows.Forms.Padding(0);
-            this.yellowButton2.ButtonText = "buttonX1";
-            this.yellowButton2.Location = new System.Drawing.Point(326, 251);
-            this.yellowButton2.Name = "yellowButton2";
-            this.yellowButton2.Size = new System.Drawing.Size(74, 26);
-            this.yellowButton2.TabIndex = 14;
             // 
             // Login
             // 
@@ -384,7 +384,7 @@
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.Controls.Line line3;
         private DevComponents.DotNetBar.Controls.Line line2;
-        private UserControls.Especiais.YellowButton yellowButton2;
-        private UserControls.Especiais.YellowButton yellowButton1;
+        private UserControls.Especiais.YellowButton btOk;
+        private UserControls.Especiais.YellowButton btCancelar;
     }
 }

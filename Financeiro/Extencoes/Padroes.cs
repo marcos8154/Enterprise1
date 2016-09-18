@@ -13,7 +13,15 @@ namespace Financeiro.Extencoes
 {
     public static class Padroes
     {
-        public static void AplicarPadroes(this DataGridViewX dataGrid)
+        public static object ValueAt(this DataGridViewX dataGrid, int columnIndex)
+        {
+            try
+            {
+                return dataGrid.CurrentRow.Cells[columnIndex].Value;
+            }
+            catch { return null; }
+        }
+        public static void AplicarPadroes(this DataGridViewX dataGrid, bool readOnly = true)
         {
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.RowHeadersVisible = false;
@@ -22,7 +30,7 @@ namespace Financeiro.Extencoes
             dataGrid.AllowUserToResizeRows = false;
             dataGrid.Cursor = Cursors.Hand;
             dataGrid.MultiSelect = false;
-            dataGrid.ReadOnly = true;
+            dataGrid.ReadOnly = readOnly;
         }
     }
 }

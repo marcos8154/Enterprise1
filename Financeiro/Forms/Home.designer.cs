@@ -55,9 +55,6 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.mdlAdministracao = new DevComponents.DotNetBar.ExpandablePanel();
-            this.btEmpresa = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.mdlFinanceiro = new DevComponents.DotNetBar.ExpandablePanel();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -65,6 +62,9 @@
             this.btFormasPag = new System.Windows.Forms.Button();
             this.btMovimentos = new System.Windows.Forms.Button();
             this.btTiposMov = new System.Windows.Forms.Button();
+            this.mdlAdministracao = new DevComponents.DotNetBar.ExpandablePanel();
+            this.btEmpresa = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,8 +108,8 @@
             this.mdlCompras.SuspendLayout();
             this.mdlEstoque.SuspendLayout();
             this.mdlVendas.SuspendLayout();
-            this.mdlAdministracao.SuspendLayout();
             this.mdlFinanceiro.SuspendLayout();
+            this.mdlAdministracao.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.informBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIconeNotificacao)).BeginInit();
@@ -135,7 +135,6 @@
             this.panel1.Controls.Add(this.mdlCompras);
             this.panel1.Controls.Add(this.mdlEstoque);
             this.panel1.Controls.Add(this.mdlVendas);
-            this.panel1.Controls.Add(this.mdlAdministracao);
             this.panel1.Controls.Add(this.mdlFinanceiro);
             this.panel1.Location = new System.Drawing.Point(1, 27);
             this.panel1.Name = "panel1";
@@ -660,85 +659,6 @@
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // mdlAdministracao
-            // 
-            this.mdlAdministracao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mdlAdministracao.ButtonImageCollapse = global::Financeiro.Properties.Resources.old_building;
-            this.mdlAdministracao.ButtonImageExpand = global::Financeiro.Properties.Resources.old_building;
-            this.mdlAdministracao.CanvasColor = System.Drawing.SystemColors.Control;
-            this.mdlAdministracao.Controls.Add(this.btEmpresa);
-            this.mdlAdministracao.Controls.Add(this.button2);
-            this.mdlAdministracao.DisabledBackColor = System.Drawing.Color.Empty;
-            this.mdlAdministracao.ExpandButtonAlignment = DevComponents.DotNetBar.eTitleButtonAlignment.Left;
-            this.mdlAdministracao.Expanded = false;
-            this.mdlAdministracao.ExpandedBounds = new System.Drawing.Rectangle(1, 0, 298, 88);
-            this.mdlAdministracao.ExpandOnTitleClick = true;
-            this.mdlAdministracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mdlAdministracao.HideControlsWhenCollapsed = true;
-            this.mdlAdministracao.Location = new System.Drawing.Point(1, 0);
-            this.mdlAdministracao.Name = "mdlAdministracao";
-            this.mdlAdministracao.Size = new System.Drawing.Size(298, 26);
-            this.mdlAdministracao.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.mdlAdministracao.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.mdlAdministracao.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.mdlAdministracao.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.mdlAdministracao.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.mdlAdministracao.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.mdlAdministracao.Style.GradientAngle = 90;
-            this.mdlAdministracao.StyleMouseDown.Alignment = System.Drawing.StringAlignment.Center;
-            this.mdlAdministracao.StyleMouseDown.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.mdlAdministracao.StyleMouseDown.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
-            this.mdlAdministracao.StyleMouseDown.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBorder;
-            this.mdlAdministracao.StyleMouseDown.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedText;
-            this.mdlAdministracao.StyleMouseOver.Alignment = System.Drawing.StringAlignment.Center;
-            this.mdlAdministracao.StyleMouseOver.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground;
-            this.mdlAdministracao.StyleMouseOver.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground2;
-            this.mdlAdministracao.StyleMouseOver.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBorder;
-            this.mdlAdministracao.StyleMouseOver.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotText;
-            this.mdlAdministracao.TabIndex = 7;
-            this.mdlAdministracao.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.mdlAdministracao.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.mdlAdministracao.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.mdlAdministracao.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.mdlAdministracao.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.mdlAdministracao.TitleStyle.GradientAngle = 90;
-            this.mdlAdministracao.TitleStyle.MarginLeft = 8;
-            this.mdlAdministracao.TitleText = "Administração";
-            this.mdlAdministracao.ExpandedChanged += new DevComponents.DotNetBar.ExpandChangeEventHandler(this.mdlAdministracao_ExpandedChanged);
-            // 
-            // btEmpresa
-            // 
-            this.btEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btEmpresa.BackColor = System.Drawing.Color.Navy;
-            this.btEmpresa.FlatAppearance.BorderSize = 0;
-            this.btEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEmpresa.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btEmpresa.Location = new System.Drawing.Point(0, 26);
-            this.btEmpresa.Name = "btEmpresa";
-            this.btEmpresa.Size = new System.Drawing.Size(299, 31);
-            this.btEmpresa.TabIndex = 11;
-            this.btEmpresa.Text = "Empresa";
-            this.btEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btEmpresa.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Navy;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button2.Location = new System.Drawing.Point(-1, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(300, 31);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Usuários";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // mdlFinanceiro
             // 
             this.mdlFinanceiro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -885,6 +805,84 @@
             this.btTiposMov.Text = "Tipos de movimento";
             this.btTiposMov.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btTiposMov.UseVisualStyleBackColor = false;
+            // 
+            // mdlAdministracao
+            // 
+            this.mdlAdministracao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mdlAdministracao.ButtonImageCollapse = global::Financeiro.Properties.Resources.old_building;
+            this.mdlAdministracao.ButtonImageExpand = global::Financeiro.Properties.Resources.old_building;
+            this.mdlAdministracao.CanvasColor = System.Drawing.SystemColors.Control;
+            this.mdlAdministracao.Controls.Add(this.btEmpresa);
+            this.mdlAdministracao.Controls.Add(this.button2);
+            this.mdlAdministracao.DisabledBackColor = System.Drawing.Color.Empty;
+            this.mdlAdministracao.ExpandButtonAlignment = DevComponents.DotNetBar.eTitleButtonAlignment.Left;
+            this.mdlAdministracao.ExpandOnTitleClick = true;
+            this.mdlAdministracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mdlAdministracao.HideControlsWhenCollapsed = true;
+            this.mdlAdministracao.Location = new System.Drawing.Point(415, 54);
+            this.mdlAdministracao.Name = "mdlAdministracao";
+            this.mdlAdministracao.Size = new System.Drawing.Size(298, 88);
+            this.mdlAdministracao.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.mdlAdministracao.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.mdlAdministracao.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.mdlAdministracao.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.mdlAdministracao.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.mdlAdministracao.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.mdlAdministracao.Style.GradientAngle = 90;
+            this.mdlAdministracao.StyleMouseDown.Alignment = System.Drawing.StringAlignment.Center;
+            this.mdlAdministracao.StyleMouseDown.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
+            this.mdlAdministracao.StyleMouseDown.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
+            this.mdlAdministracao.StyleMouseDown.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBorder;
+            this.mdlAdministracao.StyleMouseDown.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedText;
+            this.mdlAdministracao.StyleMouseOver.Alignment = System.Drawing.StringAlignment.Center;
+            this.mdlAdministracao.StyleMouseOver.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground;
+            this.mdlAdministracao.StyleMouseOver.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground2;
+            this.mdlAdministracao.StyleMouseOver.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBorder;
+            this.mdlAdministracao.StyleMouseOver.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotText;
+            this.mdlAdministracao.TabIndex = 7;
+            this.mdlAdministracao.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.mdlAdministracao.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.mdlAdministracao.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.mdlAdministracao.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.mdlAdministracao.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.mdlAdministracao.TitleStyle.GradientAngle = 90;
+            this.mdlAdministracao.TitleStyle.MarginLeft = 8;
+            this.mdlAdministracao.TitleText = "Administração";
+            this.mdlAdministracao.ExpandedChanged += new DevComponents.DotNetBar.ExpandChangeEventHandler(this.mdlAdministracao_ExpandedChanged);
+            // 
+            // btEmpresa
+            // 
+            this.btEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btEmpresa.BackColor = System.Drawing.Color.Navy;
+            this.btEmpresa.FlatAppearance.BorderSize = 0;
+            this.btEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEmpresa.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btEmpresa.Location = new System.Drawing.Point(0, 26);
+            this.btEmpresa.Name = "btEmpresa";
+            this.btEmpresa.Size = new System.Drawing.Size(299, 31);
+            this.btEmpresa.TabIndex = 11;
+            this.btEmpresa.Text = "Empresa";
+            this.btEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btEmpresa.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Navy;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button2.Location = new System.Drawing.Point(-1, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(300, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Usuários";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btUsuarios_Click);
             // 
             // arquivoToolStripMenuItem
             // 
@@ -1182,7 +1180,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(539, 163);
+            this.button1.Location = new System.Drawing.Point(519, 281);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -1198,18 +1196,20 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.informBar);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mdlAdministracao);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIG - Financeiro - 1.0.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.panel1.ResumeLayout(false);
             this.mdlPessoas.ResumeLayout(false);
             this.mdlCompras.ResumeLayout(false);
             this.mdlEstoque.ResumeLayout(false);
             this.mdlVendas.ResumeLayout(false);
-            this.mdlAdministracao.ResumeLayout(false);
             this.mdlFinanceiro.ResumeLayout(false);
+            this.mdlAdministracao.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.informBar.ResumeLayout(false);
