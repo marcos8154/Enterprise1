@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA3E8482-D475-4147-8B40-A967B82EBD07}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Financeiro</RootNamespace>
+    <AssemblyName>Financeiro</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Correios.Net">
+      <HintPath>..\..\SigGestao\DLL\Correios.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DBXConnector">
+      <HintPath>..\..\DBXConnector\DBXConnector\bin\Release\DBXConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.1.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SigGestao\DLL\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Persistor">
+      <HintPath>..\..\Persistor GA\MSSQL\Persistor\bin\Release\Persistor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CaracteristicasController.cs" />
+    <Compile Include="Controllers\DocumentosController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
+    <Compile Include="Controllers\EnderecosController.cs" />
+    <Compile Include="Controllers\EntidadeController.cs" />
+    <Compile Include="Controllers\EnvironmentController.cs" />
+    <Compile Include="Controllers\Financeiro_pessoaController.cs" />
+    <Compile Include="Controllers\Formas_pagamentoController.cs" />
+    <Compile Include="Controllers\GruposController.cs" />
+    <Compile Include="Controllers\LocaisEstoqueController.cs" />
+    <Compile Include="Controllers\Log.cs" />
+    <Compile Include="Controllers\MovimentosController.cs" />
+    <Compile Include="Controllers\Notificacao.cs" />
+    <Compile Include="Controllers\PessoasController.cs" />
+    <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\Tipos_movimentoController.cs" />
+    <Compile Include="Controllers\UnidadesController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\WindowManager.cs" />
+    <Compile Include="Controllers\WindowRestoreProfile.cs" />
+    <Compile Include="Entidades\Bancos.cs" />
+    <Compile Include="Entidades\Caixas.cs" />
+    <Compile Include="Entidades\Caracteristicas.cs" />
+    <Compile Include="Entidades\Cedentes.cs" />
+    <Compile Include="Entidades\Contas_bancarias.cs" />
+    <Compile Include="Entidades\Contas_pagar.cs" />
+    <Compile Include="Entidades\Contas_receber.cs" />
+    <Compile Include="Entidades\Documentos.cs" />
+    <Compile Include="Entidades\Empresa.cs" />
+    <Compile Include="Entidades\Enderecos.cs" />
+    <Compile Include="Entidades\Financeiro_pessoa.cs" />
+    <Compile Include="Entidades\Financeiro_produtos.cs" />
+    <Compile Include="Entidades\Formas_pagamento.cs" />
+    <Compile Include="Entidades\Grupos.cs" />
+    <Compile Include="Entidades\Itens_movimento.cs" />
+    <Compile Include="Entidades\Itens_pagamento.cs" />
+    <Compile Include="Entidades\Itens_pedido.cs" />
+    <Compile Include="Entidades\Locais_estoque.cs" />
+    <Compile Include="Entidades\Movimentos.cs" />
+    <Compile Include="Entidades\Operadoras_cartao.cs" />
+    <Compile Include="Entidades\Pedidos_compra.cs" />
+    <Compile Include="Entidades\Permissoes.cs" />
+    <Compile Include="Entidades\Pessoas.cs" />
+    <Compile Include="Entidades\Produtos.cs" />
+    <Compile Include="Entidades\Produtos_caracteristicas.cs" />
+    <Compile Include="Entidades\Produtos_fornecedores.cs" />
+    <Compile Include="Entidades\Tipos_movimento.cs" />
+    <Compile Include="Entidades\Unidades.cs" />
+    <Compile Include="Entidades\Usuarios.cs" />
+    <Compile Include="Entidades\Valores_caixas.cs" />
+    <Compile Include="Enums\Fpg_Efetuado_em.cs" />
+    <Compile Include="Enums\Tipo_armazem.cs" />
+    <Compile Include="Enums\Tipo_Movimentacao.cs" />
+    <Compile Include="Enums\TIPO_NOTIFICACAO.cs" />
+    <Compile Include="Enums\Tipo_pessoa.cs" />
+    <Compile Include="Enums\Tipo_prazo.cs" />
+    <Compile Include="Extencoes\Padroes.cs" />
+    <Compile Include="Forms\BaseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseWindow.designer.cs">
+      <DependentUpon>BaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NovaConexao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NovaConexao.designer.cs">
+      <DependentUpon>NovaConexao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NovoAmbiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NovoAmbiente.designer.cs">
+      <DependentUpon>NovoAmbiente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TopClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TopClient.designer.cs">
+      <DependentUpon>TopClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IManagedUserControl.cs" />
+    <Compile Include="Interfaces\IManagedWindow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionProvider\ConfigureSession.cs" />
+    <Compile Include="UserControls\Especiais\YellowButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Especiais\YellowButton.designer.cs">
+      <DependentUpon>YellowButton.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\BaseWindow.resx">
+      <DependentUpon>BaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NovaConexao.resx">
+      <DependentUpon>NovaConexao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NovoAmbiente.resx">
+      <DependentUpon>NovoAmbiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TopClient.resx">
+      <DependentUpon>TopClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Especiais\YellowButton.resx">
+      <DependentUpon>YellowButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1472929657_add-to-database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1472961465_vector_66_09.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474151407_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474151513_gnome-mime-application-vnd.lotus-1-2-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474151710_calc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474151786_Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474151898_go-bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474152010_go-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arriw_ylw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar-code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bussinessman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circular-graphic-for-business-stats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_to_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Erro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid_conf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_alerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_erro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_sucesso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiple-users-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\old-building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\procurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart-black-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sucesso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1472961465_vector_66_091.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
