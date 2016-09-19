@@ -49,13 +49,23 @@ namespace Financeiro.Controllers
                 session = new ConfigureSession().GetSession();
 
                 if (!string.IsNullOrWhiteSpace(busca))
-                    session.CreateCriteria(usuarios, Persistor_GA.GeneralClasses.Enums.RESULT_TYPE.MULTIPLE)
-                         .Add(Restrictions.Like(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.WHERE, "nome", busca, Persistor_GA.GeneralClasses.Enums.MatchMode.ANYWHERE))
-                         .Add(Restrictions.Like(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.OR, "email_rec", busca, Persistor_GA.GeneralClasses.Enums.MatchMode.ANYWHERE))
-                         .Execute();
+                {
+                    Criteria c = session.CreateCriteria(usuarios, Persistor_GA.GeneralClasses.Enums.RESULT_TYPE.MULTIPLE);
+
+                    if (usuarios_inativos)
+                        c.Add(Restrictions.In(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.WHERE, "ativo", "0, 1"));
+                    else
+                        c.Add(Restrictions.Eq(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.WHERE, "ativo", "1"));
+
+                    c.Add(Restrictions.Like(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.AND, "nome", busca, Persistor_GA.GeneralClasses.Enums.MatchMode.ANYWHERE));
+                    c.Add(Restrictions.Like(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.OR, "email_rec", busca, Persistor_GA.GeneralClasses.Enums.MatchMode.ANYWHERE));
+
+                    c.Execute();
+                }
+
 
                 else
-                    session.ReadAll(usuarios);
+                    session.ReadAll(usuarios, "ativo " + (usuarios_inativos ? "IN (0, 1)" : "IN (1)"));
 
                 Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.SUCESSO, usuarios.ResultList.Count + " usuário(s) carregado(s)");
 
@@ -171,7 +181,7 @@ namespace Financeiro.Controllers
             }
             catch (Exception ex)
             {
-                if(transaction != null) transaction.RollBack();
+                if (transaction != null) transaction.RollBack();
                 if (session != null) session.Close();
                 Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.ERRO, "Ocorreu um problema ao processar solicitação: " + ex.Message);
                 Log.Write("UsuariosController", "Salvar", ex.Message);

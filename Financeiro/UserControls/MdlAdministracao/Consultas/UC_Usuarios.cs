@@ -12,6 +12,8 @@ using Financeiro.Interfaces;
 using Financeiro.Controllers;
 using Entidades;
 using Financeiro.Util;
+using Financeiro.UserControls.MdlAdministracao.Cadastros;
+using Financeiro.Forms;
 
 namespace Financeiro.UserControls.MdlAdministracao.Consultas
 {
@@ -125,6 +127,32 @@ namespace Financeiro.UserControls.MdlAdministracao.Consultas
         private void btExcluir_Yb_Click()
         {
             new Alerta("Teste");
+        }
+
+        private void AbreCadastro(int id = 0)
+        {
+            string titulo = id == 0 ? "Usuários - Incluir" : "Usuários - Alterar";
+            CadastroUsuarios cadusu = new CadastroUsuarios(id);
+            new BaseWindow(cadusu, titulo);
+            CarregarUsuarios();
+        }
+
+        private void dataGridUsuarios_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridUsuarios.CurrentRow == null || dataGridUsuarios.Rows.Count == 0) return;
+
+            int id = int.Parse(dataGridUsuarios.ValueAt(0).ToString());
+            AbreCadastro(id);
+        }
+
+        private void btNovo_Yb_Click()
+        {
+            AbreCadastro();
+        }
+
+        private void txPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            CarregarUsuarios(txPesquisa.Text);
         }
     }
 }

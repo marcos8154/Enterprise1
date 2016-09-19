@@ -30,13 +30,13 @@
         {
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txNome = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.ckAtivo = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.txEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txSenha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.yellowButton1 = new Financeiro.UserControls.Especiais.YellowButton();
             this.yellowButton2 = new Financeiro.UserControls.Especiais.YellowButton();
+            this.yellowButton1 = new Financeiro.UserControls.Especiais.YellowButton();
             this.SuspendLayout();
             // 
             // labelX1
@@ -66,18 +66,21 @@
             this.txNome.Size = new System.Drawing.Size(234, 20);
             this.txNome.TabIndex = 1;
             // 
-            // checkBoxX1
+            // ckAtivo
             // 
             // 
             // 
             // 
-            this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX1.Location = new System.Drawing.Point(299, 7);
-            this.checkBoxX1.Name = "checkBoxX1";
-            this.checkBoxX1.Size = new System.Drawing.Size(50, 23);
-            this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX1.TabIndex = 2;
-            this.checkBoxX1.Text = "Ativo";
+            this.ckAtivo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ckAtivo.Checked = true;
+            this.ckAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckAtivo.CheckValue = "Y";
+            this.ckAtivo.Location = new System.Drawing.Point(299, 7);
+            this.ckAtivo.Name = "ckAtivo";
+            this.ckAtivo.Size = new System.Drawing.Size(50, 23);
+            this.ckAtivo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ckAtivo.TabIndex = 2;
+            this.ckAtivo.Text = "Ativo";
             // 
             // txEmail
             // 
@@ -134,17 +137,6 @@
             this.labelX3.TabIndex = 5;
             this.labelX3.Text = "Senha";
             // 
-            // yellowButton1
-            // 
-            this.yellowButton1.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yellowButton1.ButtonMargin = new System.Windows.Forms.Padding(3);
-            this.yellowButton1.ButtonPadding = new System.Windows.Forms.Padding(0);
-            this.yellowButton1.ButtonText = "&Sair";
-            this.yellowButton1.Location = new System.Drawing.Point(274, 91);
-            this.yellowButton1.Name = "yellowButton1";
-            this.yellowButton1.Size = new System.Drawing.Size(75, 26);
-            this.yellowButton1.TabIndex = 7;
-            // 
             // yellowButton2
             // 
             this.yellowButton2.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +149,18 @@
             this.yellowButton2.TabIndex = 8;
             this.yellowButton2.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.yellowButton2_Yb_Click);
             // 
+            // yellowButton1
+            // 
+            this.yellowButton1.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yellowButton1.ButtonMargin = new System.Windows.Forms.Padding(3);
+            this.yellowButton1.ButtonPadding = new System.Windows.Forms.Padding(0);
+            this.yellowButton1.ButtonText = "&Sair";
+            this.yellowButton1.Location = new System.Drawing.Point(274, 91);
+            this.yellowButton1.Name = "yellowButton1";
+            this.yellowButton1.Size = new System.Drawing.Size(75, 26);
+            this.yellowButton1.TabIndex = 7;
+            this.yellowButton1.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.yellowButton1_Yb_Click);
+            // 
             // CadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,7 +172,7 @@
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.txEmail);
             this.Controls.Add(this.labelX2);
-            this.Controls.Add(this.checkBoxX1);
+            this.Controls.Add(this.ckAtivo);
             this.Controls.Add(this.txNome);
             this.Controls.Add(this.labelX1);
             this.Name = "CadastroUsuarios";
@@ -181,7 +185,7 @@
 
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txNome;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
+        private DevComponents.DotNetBar.Controls.CheckBoxX ckAtivo;
         private DevComponents.DotNetBar.Controls.TextBoxX txEmail;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.TextBoxX txSenha;

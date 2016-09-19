@@ -33,6 +33,7 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             txNome.Text = usuario.Nome;
             txEmail.Text = usuario.Email_rec;
             txSenha.Text = usuario.Senha;
+            ckAtivo.Checked = usuario.Ativo;
         }
 
         private void yellowButton2_Yb_Click()
@@ -43,11 +44,17 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             usuario.Nome = txNome.Text;
             usuario.Email_rec = txEmail.Text;
             usuario.Senha = txSenha.Text;
+            usuario.Ativo = ckAtivo.Checked;
 
-            Permissoes perm = new Permissoes();
+            Permissoes perm = UsuariosController.CarregarPermissoes(id_usuario);
             perm.Usuarios_id = usuario.Id;
 
             if (UsuariosController.Salvar(usuario, perm)) (Parent as Form).Close();
+        }
+
+        private void yellowButton1_Yb_Click()
+        {
+            (Parent as Form).Close();
         }
     }
 }

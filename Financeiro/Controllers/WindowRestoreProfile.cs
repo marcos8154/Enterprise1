@@ -13,6 +13,7 @@ namespace Financeiro.Controllers
     {
         public static void Save(List<IManagedWindow> list, int user_id)
         {
+            if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\UserSessions\")) Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\UserSessions\");
             FileStream fs = null;
             string arquivo = (Directory.GetCurrentDirectory() + @"\UserSessions\" + user_id + ".conf");
             try
@@ -52,6 +53,7 @@ namespace Financeiro.Controllers
 
         public static List<UserWindow> Load(int user_id)
         {
+            if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\UserSessions\")) Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\UserSessions\");
             string arquivo = Directory.GetCurrentDirectory() + @"\UserSessions\" + user_id + ".conf";
             FileStream fs = null;
             try

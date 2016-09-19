@@ -147,6 +147,12 @@
     <Compile Include="Forms\NovoAmbiente.designer.cs">
       <DependentUpon>NovoAmbiente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Preparando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preparando.Designer.cs">
+      <DependentUpon>Preparando.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TopClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,12 @@
     <Compile Include="UserControls\MdlAdministracao\Consultas\UC_Usuarios.Designer.cs">
       <DependentUpon>UC_Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MdlFinanceiro\Consultas\UC_TiposMovimento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MdlFinanceiro\Consultas\UC_TiposMovimento.Designer.cs">
+      <DependentUpon>UC_TiposMovimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Alerta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NovoAmbiente.resx">
       <DependentUpon>NovoAmbiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preparando.resx">
+      <DependentUpon>Preparando.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TopClient.resx">
       <DependentUpon>TopClient.cs</DependentUpon>
@@ -218,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MdlAdministracao\Consultas\UC_Usuarios.resx">
       <DependentUpon>UC_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MdlFinanceiro\Consultas\UC_TiposMovimento.resx">
+      <DependentUpon>UC_TiposMovimento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Util\Alerta.resx">
       <DependentUpon>Alerta.cs</DependentUpon>
@@ -364,7 +382,6 @@
     <Folder Include="UserControls\MdlEstoque\Cadastros\" />
     <Folder Include="UserControls\MdlEstoque\Consultas\" />
     <Folder Include="UserControls\MdlFinanceiro\Cadastros\" />
-    <Folder Include="UserControls\MdlFinanceiro\Consultas\" />
     <Folder Include="UserControls\MdlPessoas\Cadastros\" />
     <Folder Include="UserControls\MdlPessoas\Consultas\" />
     <Folder Include="UserControls\MdlVendas\Cadastros\" />

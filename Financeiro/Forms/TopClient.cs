@@ -147,7 +147,9 @@ namespace Financeiro.Forms
             catch (Exception ex)
             {
                 this.Visible = true;
-                MessageBox.Show("Não foi possível conectar com o servidor! \n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Write("TopClient", "Conectar", ex.Message);
+                MessageBox.Show("O sistema encontrou problemas em processar a solicitação e precisará ser encerrado. \n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
             }
         }
 

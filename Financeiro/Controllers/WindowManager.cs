@@ -173,7 +173,7 @@ namespace Financeiro.Controllers
                     AddOrShow(uc, window.Title, window.WindowID, window.Sizable);
                 }
             }
-            catch { }
+            catch (Exception ex){ }
         }
 
         public void SaveState()
@@ -181,6 +181,7 @@ namespace Financeiro.Controllers
             int usuario_id = UsuariosController.UsuarioLogado.Id;
 
             WindowRestoreProfile.Save(managedsWindows, usuario_id);
+            CloseAll();
         }
 
         public void MinimizeAll()

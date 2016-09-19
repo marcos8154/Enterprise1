@@ -36,7 +36,7 @@ namespace Financeiro.Controllers
             }
         }
 
-        public static List<Tipos_movimento> Listar(string busca, bool inativos = false)
+        public static List<Tipos_movimento> Listar(string busca)
         {
             Session session = null;
 

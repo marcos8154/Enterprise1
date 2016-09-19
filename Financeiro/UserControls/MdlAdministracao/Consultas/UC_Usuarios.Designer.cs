@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridUsuarios = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridPermissoes = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.txPesquisa = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.ckInativos = new System.Windows.Forms.CheckBox();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txPesquisa = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.ckInativos = new System.Windows.Forms.CheckBox();
             this.btSair = new Financeiro.UserControls.Especiais.YellowButton();
             this.btExcluir = new Financeiro.UserControls.Especiais.YellowButton();
             this.btNovo = new Financeiro.UserControls.Especiais.YellowButton();
@@ -57,14 +57,14 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridUsuarios.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridUsuarios.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridUsuarios.Location = new System.Drawing.Point(3, 31);
             this.dataGridUsuarios.Name = "dataGridUsuarios";
@@ -72,6 +72,7 @@
             this.dataGridUsuarios.Size = new System.Drawing.Size(481, 441);
             this.dataGridUsuarios.TabIndex = 0;
             this.dataGridUsuarios.SelectionChanged += new System.EventHandler(this.dataGridUsuarios_SelectionChanged);
+            this.dataGridUsuarios.DoubleClick += new System.EventHandler(this.dataGridUsuarios_DoubleClick);
             // 
             // Column1
             // 
@@ -104,45 +105,20 @@
             this.Column6,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridPermissoes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridPermissoes.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridPermissoes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridPermissoes.Location = new System.Drawing.Point(490, 31);
             this.dataGridPermissoes.Name = "dataGridPermissoes";
             this.dataGridPermissoes.Size = new System.Drawing.Size(297, 441);
             this.dataGridPermissoes.TabIndex = 1;
             this.dataGridPermissoes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPermissoes_CellValueChanged);
-            // 
-            // txPesquisa
-            // 
-            // 
-            // 
-            // 
-            this.txPesquisa.Border.Class = "TextBoxBorder";
-            this.txPesquisa.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.txPesquisa.Location = new System.Drawing.Point(5, 4);
-            this.txPesquisa.Name = "txPesquisa";
-            this.txPesquisa.PreventEnterBeep = true;
-            this.txPesquisa.Size = new System.Drawing.Size(305, 21);
-            this.txPesquisa.TabIndex = 2;
-            // 
-            // ckInativos
-            // 
-            this.ckInativos.AutoSize = true;
-            this.ckInativos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.ckInativos.Location = new System.Drawing.Point(351, 7);
-            this.ckInativos.Name = "ckInativos";
-            this.ckInativos.Size = new System.Drawing.Size(163, 20);
-            this.ckInativos.TabIndex = 6;
-            this.ckInativos.Text = "Exibir usuários inativos";
-            this.ckInativos.UseVisualStyleBackColor = true;
             // 
             // Column6
             // 
@@ -163,6 +139,33 @@
             this.Column5.HeaderText = "Habilitado";
             this.Column5.Name = "Column5";
             this.Column5.Width = 80;
+            // 
+            // txPesquisa
+            // 
+            // 
+            // 
+            // 
+            this.txPesquisa.Border.Class = "TextBoxBorder";
+            this.txPesquisa.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.txPesquisa.Location = new System.Drawing.Point(5, 4);
+            this.txPesquisa.Name = "txPesquisa";
+            this.txPesquisa.PreventEnterBeep = true;
+            this.txPesquisa.Size = new System.Drawing.Size(305, 21);
+            this.txPesquisa.TabIndex = 2;
+            this.txPesquisa.WatermarkText = "Pesquisar";
+            this.txPesquisa.TextChanged += new System.EventHandler(this.txPesquisa_TextChanged);
+            // 
+            // ckInativos
+            // 
+            this.ckInativos.AutoSize = true;
+            this.ckInativos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.ckInativos.Location = new System.Drawing.Point(351, 7);
+            this.ckInativos.Name = "ckInativos";
+            this.ckInativos.Size = new System.Drawing.Size(163, 20);
+            this.ckInativos.TabIndex = 6;
+            this.ckInativos.Text = "Exibir usuários inativos";
+            this.ckInativos.UseVisualStyleBackColor = true;
             // 
             // btSair
             // 
@@ -197,6 +200,7 @@
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(71, 24);
             this.btNovo.TabIndex = 3;
+            this.btNovo.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.btNovo_Yb_Click);
             // 
             // UC_Usuarios
             // 

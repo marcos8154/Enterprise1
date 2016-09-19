@@ -8,6 +8,8 @@ using Financeiro.Enums;
 using Financeiro.Interfaces;
 using Entidades;
 using Financeiro.UserControls.MdlAdministracao.Consultas;
+using Financeiro.UserControls.MdlFinanceiro.Consultas;
+using Financeiro.Forms;
 
 namespace Financeiro
 {
@@ -96,7 +98,42 @@ namespace Financeiro
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
+            windowManager.SaveState();
+        }
+
+        private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            windowManager.Cascade();
+        }
+
+        private void fecharTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             windowManager.CloseAll();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            windowManager.RestoreState();
+        }
+
+        private void btTiposMov_Click(object sender, EventArgs e)
+        {
+            IManagedUserControl muc = new UC_TiposMovimento();
+            windowManager.AddOrShow(muc, "Tipos de movimento", "UC_TMV-45754", false);
+        }
+
+        private void minimizarTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            windowManager.MinimizeAll();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Preparando p = new Preparando();
+            p.TopMost = true;
+            p.Show();
+            p.pregresso.Maximum = 100;
+            p.pregresso.Value = 50;
         }
     }
 }
