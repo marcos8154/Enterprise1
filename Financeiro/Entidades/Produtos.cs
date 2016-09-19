@@ -1,4 +1,4 @@
-/* 18/09/2016 15:22:56 */
+/* 19/09/2016 20:51:34 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -39,6 +39,7 @@ namespace Entidades
         public byte[] Foto { get; set; }
         public int Grupos_id { get; set; }
         public bool Inativo { get; set; }
+        public int Loja { get; set; }
         public int Locais_estoque_id { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Financeiro.Forms;
 using Financeiro.Interfaces;
 using Financeiro.SessionProvider;
 using Persistor.Persistence;
@@ -25,7 +26,6 @@ namespace Financeiro.Controllers
                     return true;
                 }
             }
-
             return false;
         }
 

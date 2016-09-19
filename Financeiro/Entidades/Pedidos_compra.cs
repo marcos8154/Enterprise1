@@ -1,4 +1,4 @@
-/* 18/09/2016 15:22:55 */
+/* 19/09/2016 20:51:34 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -16,10 +16,13 @@ namespace Entidades
     public class Pedidos_compra : Entity
     {
         public int Id { get; set; }
+        public string Referencia { get; set; }
         public DateTime Data_pedido { get; set; }
         public DateTime Prazo_entrega { get; set; }
         public decimal Total { get; set; }
         public string Obs { get; set; }
+        public int Loja_pedido { get; set; }
+        public int Loja_entrega { get; set; }
         public int Fornecedor_id { get; set; }
     }
 }

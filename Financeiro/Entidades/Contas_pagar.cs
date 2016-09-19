@@ -1,4 +1,4 @@
-/* 18/09/2016 15:22:55 */
+/* 19/09/2016 20:51:33 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -16,6 +16,7 @@ namespace Entidades
     public class Contas_pagar : Entity
     {
         public int Id { get; set; }
+        public int Loja { get; set; }
         public string Num_doc { get; set; }
         public int Movimentos_id { get; set; }
         public string Pagador { get; set; }

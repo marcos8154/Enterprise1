@@ -11,6 +11,10 @@ using Entidades;
 using Financeiro.Controllers;
 using Financeiro.Enums;
 using Financeiro.Extencoes;
+using Financeiro.UserControls.MdlFinanceiro.Cadastros;
+using Financeiro.Forms;
+using System.Threading;
+using Financeiro.UserControls.Especiais;
 
 namespace Financeiro.UserControls.MdlFinanceiro.Consultas
 {
@@ -66,6 +70,18 @@ namespace Financeiro.UserControls.MdlFinanceiro.Consultas
         public bool IsValid()
         {
             return true;
+        }
+
+        private void AbreCadastro(int tmv_id = 0)
+        {
+            string titulo =  tmv_id != 0 ? "Tipo de movimento - Incluir" : "Tipo de movimento - Alterar";
+            CadastroTmv cad = new CadastroTmv(tmv_id);
+            new BaseWindow(cad, titulo);
+        }
+
+        private void btNovo_Yb_Click()
+        {
+            AbreCadastro();
         }
     }
 }

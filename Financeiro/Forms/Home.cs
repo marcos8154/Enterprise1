@@ -129,11 +129,6 @@ namespace Financeiro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Preparando p = new Preparando();
-            p.TopMost = true;
-            p.Show();
-            p.pregresso.Maximum = 100;
-            p.pregresso.Value = 50;
         }
     }
 }

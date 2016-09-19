@@ -1,4 +1,4 @@
-/* 18/09/2016 15:22:55 */
+/* 19/09/2016 20:51:33 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -16,6 +16,7 @@ namespace Entidades
     public class Caixas : Entity
     {
         public int Id { get; set; }
+        public int Loja { get; set; }
         public DateTime Data_abertura { get; set; }
         public DateTime Data_fechamento { get; set; }
         public decimal Valor_entrada { get; set; }

@@ -1,4 +1,4 @@
-/* 18/09/2016 15:22:54 */
+/* 19/09/2016 20:51:34 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -19,6 +19,11 @@ namespace Entidades
         public string Descricao { get; set; }
         public int Movimentacao_itens { get; set; }
         public int Movimentacao_valores { get; set; }
+        public bool Gera_comissao { get; set; }
+        public bool Permite_desconto { get; set; }
+        public bool Informar_cliente { get; set; }
+        public bool Informar_fornecedor { get; set; }
+        public bool Informar_funcionario { get; set; }
         public bool Ativo { get; set; }
     }
 }

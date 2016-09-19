@@ -30,12 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridTmv = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.txPesquisa = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.q = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txPesquisa = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btSair = new Financeiro.UserControls.Especiais.YellowButton();
             this.btExcluir = new Financeiro.UserControls.Especiais.YellowButton();
             this.btNovo = new Financeiro.UserControls.Especiais.YellowButton();
@@ -68,21 +68,6 @@
             this.dataGridTmv.ReadOnly = true;
             this.dataGridTmv.Size = new System.Drawing.Size(708, 411);
             this.dataGridTmv.TabIndex = 0;
-            // 
-            // txPesquisa
-            // 
-            // 
-            // 
-            // 
-            this.txPesquisa.Border.Class = "TextBoxBorder";
-            this.txPesquisa.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.txPesquisa.Location = new System.Drawing.Point(7, 8);
-            this.txPesquisa.Name = "txPesquisa";
-            this.txPesquisa.PreventEnterBeep = true;
-            this.txPesquisa.Size = new System.Drawing.Size(276, 21);
-            this.txPesquisa.TabIndex = 1;
-            this.txPesquisa.WatermarkText = "Pesquisar por descrição";
             // 
             // Column1
             // 
@@ -117,6 +102,21 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
+            // txPesquisa
+            // 
+            // 
+            // 
+            // 
+            this.txPesquisa.Border.Class = "TextBoxBorder";
+            this.txPesquisa.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.txPesquisa.Location = new System.Drawing.Point(7, 8);
+            this.txPesquisa.Name = "txPesquisa";
+            this.txPesquisa.PreventEnterBeep = true;
+            this.txPesquisa.Size = new System.Drawing.Size(276, 21);
+            this.txPesquisa.TabIndex = 1;
+            this.txPesquisa.WatermarkText = "Pesquisar por descrição";
+            // 
             // btSair
             // 
             this.btSair.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,6 +149,7 @@
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(72, 25);
             this.btNovo.TabIndex = 2;
+            this.btNovo.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.btNovo_Yb_Click);
             // 
             // UC_TiposMovimento
             // 

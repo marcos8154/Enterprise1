@@ -13,13 +13,11 @@ using Persistor_GA.AbstractClasses;
 
 namespace Entidades
 {
-    public class Itens_pedido : Entity
+    public class Itens_sc : Entity
     {
         public int Id { get; set; }
-        public decimal Valor_unit { get; set; }
-        public double Quant { get; set; }
-        public decimal Total { get; set; }
-        public int Pedidos_compra_id { get; set; }
         public int Produtos_id { get; set; }
+        public double Quant { get; set; }
+        public int Solicitacao_id { get; set; }
     }
 }

@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -97,6 +98,7 @@
     <Compile Include="Entidades\Itens_movimento.cs" />
     <Compile Include="Entidades\Itens_pagamento.cs" />
     <Compile Include="Entidades\Itens_pedido.cs" />
+    <Compile Include="Entidades\Itens_sc.cs" />
     <Compile Include="Entidades\Locais_estoque.cs" />
     <Compile Include="Entidades\Movimentos.cs" />
     <Compile Include="Entidades\Operadoras_cartao.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Entidades\Produtos.cs" />
     <Compile Include="Entidades\Produtos_caracteristicas.cs" />
     <Compile Include="Entidades\Produtos_fornecedores.cs" />
+    <Compile Include="Entidades\Solicitacoes_compra.cs" />
     <Compile Include="Entidades\Tipos_movimento.cs" />
     <Compile Include="Entidades\Unidades.cs" />
     <Compile Include="Entidades\Usuarios.cs" />
@@ -147,12 +150,6 @@
     <Compile Include="Forms\NovoAmbiente.designer.cs">
       <DependentUpon>NovoAmbiente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Preparando.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Preparando.Designer.cs">
-      <DependentUpon>Preparando.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\TopClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +161,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionProvider\ConfigureSession.cs" />
+    <Compile Include="UserControls\Especiais\Preparando.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Especiais\Preparando.Designer.cs">
+      <DependentUpon>Preparando.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Especiais\YellowButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +184,12 @@
     </Compile>
     <Compile Include="UserControls\MdlAdministracao\Consultas\UC_Usuarios.Designer.cs">
       <DependentUpon>UC_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MdlFinanceiro\Cadastros\CadastroTmv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MdlFinanceiro\Cadastros\CadastroTmv.Designer.cs">
+      <DependentUpon>CadastroTmv.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MdlFinanceiro\Consultas\UC_TiposMovimento.cs">
       <SubType>UserControl</SubType>
@@ -209,9 +218,6 @@
     <EmbeddedResource Include="Forms\NovoAmbiente.resx">
       <DependentUpon>NovoAmbiente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Preparando.resx">
-      <DependentUpon>Preparando.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TopClient.resx">
       <DependentUpon>TopClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +231,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\Especiais\Preparando.resx">
+      <DependentUpon>Preparando.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Especiais\YellowButton.resx">
       <DependentUpon>YellowButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MdlAdministracao\Consultas\UC_Usuarios.resx">
       <DependentUpon>UC_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MdlFinanceiro\Cadastros\CadastroTmv.resx">
+      <DependentUpon>CadastroTmv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MdlFinanceiro\Consultas\UC_TiposMovimento.resx">
       <DependentUpon>UC_TiposMovimento.cs</DependentUpon>
@@ -381,7 +393,6 @@
     <Folder Include="UserControls\MdlCompras\Consultas\" />
     <Folder Include="UserControls\MdlEstoque\Cadastros\" />
     <Folder Include="UserControls\MdlEstoque\Consultas\" />
-    <Folder Include="UserControls\MdlFinanceiro\Cadastros\" />
     <Folder Include="UserControls\MdlPessoas\Cadastros\" />
     <Folder Include="UserControls\MdlPessoas\Consultas\" />
     <Folder Include="UserControls\MdlVendas\Cadastros\" />

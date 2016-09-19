@@ -1,4 +1,4 @@
-/* 18/09/2016 15:22:56 */
+/* 19/09/2016 20:51:34 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -16,6 +16,7 @@ namespace Entidades
     public class Pessoas : Entity
     {
         public int Id { get; set; }
+        public int Loja { get; set; }
         public string Razao_social { get; set; }
         public string Nome_fantasia { get; set; }
         public string Contato { get; set; }

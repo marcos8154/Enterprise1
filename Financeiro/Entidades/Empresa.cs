@@ -1,4 +1,4 @@
-/* 18/09/2016 15:22:55 */
+/* 19/09/2016 20:51:33 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -23,6 +23,7 @@ namespace Entidades
         public string Telefone2 { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
+        public string Responsavel { get; set; }
         public int Enderecos_id { get; set; }
     }
 }
