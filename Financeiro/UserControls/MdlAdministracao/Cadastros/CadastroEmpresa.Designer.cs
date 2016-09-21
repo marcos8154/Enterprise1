@@ -469,7 +469,7 @@
             this.ckAtivo.Checked = true;
             this.ckAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.ckAtivo.Location = new System.Drawing.Point(108, 249);
+            this.ckAtivo.Location = new System.Drawing.Point(108, 248);
             this.ckAtivo.Name = "ckAtivo";
             this.ckAtivo.Size = new System.Drawing.Size(114, 20);
             this.ckAtivo.TabIndex = 18;
