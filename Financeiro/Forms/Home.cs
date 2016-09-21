@@ -180,5 +180,15 @@ namespace Financeiro
         {
             windowManager.CurrentUserControl.Last();
         }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Delete();
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Reload();
+        }
     }
 }

@@ -109,13 +109,14 @@
             this.btNovo = new System.Windows.Forms.ToolStripButton();
             this.btEditar = new System.Windows.Forms.ToolStripButton();
             this.btSalvar = new System.Windows.Forms.ToolStripButton();
+            this.btExcluir = new System.Windows.Forms.ToolStripButton();
             this.btPrimeiroRegistro = new System.Windows.Forms.ToolStripButton();
             this.btRegistroAnterior = new System.Windows.Forms.ToolStripButton();
             this.btProximoRegistro = new System.Windows.Forms.ToolStripButton();
             this.btUltimoRegistro = new System.Windows.Forms.ToolStripButton();
             this.btCalc = new System.Windows.Forms.ToolStripButton();
             this.btHelp = new System.Windows.Forms.ToolStripButton();
-            this.btExcluir = new System.Windows.Forms.ToolStripButton();
+            this.btRefresh = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.mdlPessoas.SuspendLayout();
             this.mdlCompras.SuspendLayout();
@@ -1221,6 +1222,7 @@
             this.btRegistroAnterior,
             this.btProximoRegistro,
             this.btUltimoRegistro,
+            this.btRefresh,
             this.btCalc,
             this.btHelp});
             this.barraTarefas.Location = new System.Drawing.Point(0, 24);
@@ -1283,6 +1285,17 @@
             this.btSalvar.Size = new System.Drawing.Size(36, 36);
             this.btSalvar.Text = "Salvar";
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btExcluir.Image = global::Financeiro.Properties.Resources.deletar;
+            this.btExcluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btExcluir.Name = "btExcluir";
+            this.btExcluir.Size = new System.Drawing.Size(36, 36);
+            this.btExcluir.Text = "Excluir";
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btPrimeiroRegistro
             // 
@@ -1348,15 +1361,16 @@
             this.btHelp.Size = new System.Drawing.Size(36, 36);
             this.btHelp.Text = "Ajuda";
             // 
-            // btExcluir
+            // btRefresh
             // 
-            this.btExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btExcluir.Image = global::Financeiro.Properties.Resources.deletar;
-            this.btExcluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(36, 36);
-            this.btExcluir.Text = "Excluir";
+            this.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btRefresh.Image = global::Financeiro.Properties.Resources.refresh;
+            this.btRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(36, 36);
+            this.btRefresh.Text = "Atualizar dados";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // Home
             // 
@@ -1484,6 +1498,7 @@
         private System.Windows.Forms.ToolStripButton btHelp;
         private System.Windows.Forms.ToolStripButton btSalvar;
         private System.Windows.Forms.ToolStripButton btExcluir;
+        private System.Windows.Forms.ToolStripButton btRefresh;
     }
 }
 

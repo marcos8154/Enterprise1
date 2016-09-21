@@ -82,6 +82,7 @@ namespace Financeiro.Controllers
                 managedWindow.CURRENT_FORM.KeyPreview = true;
                 managedWindow.CURRENT_FORM.KeyDown += CURRENT_FORM_KeyDown;
                 managedWindow.CURRENT_FORM.GotFocus += CURRENT_FORM_GotFocus;
+                managedWindow.ManagedUserControl.CURRENT.Load += CURRENT_Load;
                 managedWindow.CURRENT_FORM.Show();
 
                 ToolStripMenuItem item = new ToolStripMenuItem();
@@ -93,6 +94,13 @@ namespace Financeiro.Controllers
 
                 managedWindow.CURRENT_FORM.FormClosing += CURRENT_FormClosing;
             }
+        }
+
+        private void CURRENT_Load(object sender, EventArgs e)
+        {
+            UserControl userControl = (sender as UserControl);
+            IManagedUserControl muc = (userControl as IManagedUserControl);
+            muc.OnLoad();
         }
 
         private void CURRENT_FORM_GotFocus(object sender, EventArgs e)
@@ -141,6 +149,7 @@ namespace Financeiro.Controllers
                         managedWw.CURRENT_FORM.Visible = true;
                         managedWw.CURRENT_FORM.WindowState = FormWindowState.Normal;
                         BarraTarefas.Enabled = true;
+                        managedWw.ManagedUserControl.OnRestore();
                         break;
                     }
                 }

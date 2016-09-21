@@ -70,6 +70,7 @@
     <Compile Include="Controllers\Financeiro_pessoaController.cs" />
     <Compile Include="Controllers\Formas_pagamentoController.cs" />
     <Compile Include="Controllers\GruposController.cs" />
+    <Compile Include="Controllers\IMucController.cs" />
     <Compile Include="Controllers\LocaisEstoqueController.cs" />
     <Compile Include="Controllers\Log.cs" />
     <Compile Include="Controllers\MovimentosController.cs" />
@@ -193,6 +194,12 @@
     <Compile Include="Util\Alerta.Designer.cs">
       <DependentUpon>Alerta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\Confirmacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\Confirmacao.Designer.cs">
+      <DependentUpon>Confirmacao.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\BaseWindow.resx">
       <DependentUpon>BaseWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Util\Alerta.resx">
       <DependentUpon>Alerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\Confirmacao.resx">
+      <DependentUpon>Confirmacao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -432,6 +442,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\deletar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

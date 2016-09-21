@@ -292,6 +292,7 @@
             this.txCEP.Name = "txCEP";
             this.txCEP.Size = new System.Drawing.Size(91, 21);
             this.txCEP.TabIndex = 10;
+            this.txCEP.Leave += new System.EventHandler(this.txCEP_Leave);
             // 
             // txLogradouro
             // 
@@ -521,6 +522,7 @@
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(80, 26);
             this.btCancelar.TabIndex = 39;
+            this.btCancelar.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.btCancelar_Yb_Click);
             // 
             // CadastroEmpresa
             // 

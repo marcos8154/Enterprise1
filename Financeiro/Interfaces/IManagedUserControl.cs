@@ -23,6 +23,8 @@ namespace Financeiro.Interfaces
 
         void Save();
 
+        void Delete();
+
         void Edit();
 
         void First();
@@ -36,6 +38,10 @@ namespace Financeiro.Interfaces
         void Help();
 
         void OnRestore();
+
+        void OnLoad();
+
+        void Reload();
 
         BarraTarefas BarraTarefas { get; set; }
     }

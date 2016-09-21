@@ -39,12 +39,86 @@ namespace Financeiro.Controllers
                 return empresa;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Write("EmpresaController", "Carregar", ex.Message);
                 if (session != null) session.Close();
                 return null;
             }
+        }
+
+        public static bool Excluir(int id_empr)
+        {
+            Session session = null;
+            Transaction transaction = null;
+            try
+            {
+                Empresa empresa = Carregar(id_empr);
+                if (!PodeExcluir(empresa)) return false;
+
+                session = new ConfigureSession().GetSession();
+                transaction = session.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
+
+                Enderecos endereco = EnderecosController.Carregar(empresa.Enderecos_id);
+
+                session.Delete(empresa, id_empr, transaction);
+                session.Delete(endereco, endereco.Id, transaction);
+
+                transaction.Commit();
+                session.Close();
+                Notificacao.Sucesso("Empresa excluída");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null) transaction.RollBack();
+                if (session != null) session.Close();
+                Notificacao.Erro(ex.Message);
+                Log.Write("EmpresaController", "Excluir", ex.Message);
+
+                return false;
+            }
+        }
+
+        private static bool PodeExcluir(Empresa empresa)
+        {
+            Pessoas p = new Pessoas();
+            Produtos prod = new Produtos();
+            Contas_pagar cp = new Contas_pagar();
+            Contas_receber cr = new Contas_receber();
+            Movimentos mov = new Movimentos();
+
+            if (EntidadeController.Existe(p, "loja", empresa.Id.ToString()))
+            {
+                Notificacao.Alerta("Não é possível excluir esta empresa. Existem uma ou mais pessoas relacionadas a ela.");
+                return false;
+            }
+
+            if(EntidadeController.Existe(prod, "loja", empresa.Id.ToString()))
+            {
+                Notificacao.Alerta("Não é possível excluir esta empresa. Existem um ou mais produtos relacionados a ela.");
+                return false;
+            }
+
+            if(EntidadeController.Existe(cp, "loja", empresa.Id.ToString()))
+            {
+                Notificacao.Alerta("Não é possível excluir esta empresa. Existem uma ou mais contas a pagar/pagas relacionados a ela.");
+                return false;
+            }
+
+            if(EntidadeController.Existe(cr, "loja", empresa.Id.ToString()))
+            {
+                Notificacao.Alerta("Não é possível excluir esta empresa. Existem uma ou mais contas a receber/recebidas relacionados a ela.");
+                return false;
+            }
+
+            if(EntidadeController.Existe(mov, "loja", empresa.Id.ToString()))
+            {
+                Notificacao.Alerta("Não é possível excluir esta empresa. Existem um ou mais movimentos relacionados a ela.");
+                return false;
+            }
+
+            return true;
         }
 
         public static bool Salvar(Empresa empresa, Enderecos endereco)
