@@ -7,9 +7,8 @@ using Financeiro.Controllers;
 using Financeiro.Enums;
 using Financeiro.Interfaces;
 using Entidades;
-using Financeiro.UserControls.MdlAdministracao.Consultas;
-using Financeiro.UserControls.MdlFinanceiro.Consultas;
 using Financeiro.Forms;
+using Financeiro.UserControls.MdlAdministracao.Cadastros;
 
 namespace Financeiro
 {
@@ -25,6 +24,7 @@ namespace Financeiro
             InitializeComponent();
 
             windowManager.menuJanela = menuJanela;
+            windowManager.BarraTarefas = barraTarefas;
             Notificacao.Inicializar(imgIconeNotificacao, lbNotificacao);
         }
 
@@ -92,8 +92,8 @@ namespace Financeiro
 
         private void btUsuarios_Click(object sender, EventArgs e)
         {
-            IManagedUserControl muc = new UC_Usuarios();
-            windowManager.AddOrShow(muc, "Usuários", "UC_USR-4575", false);
+         //   IManagedUserControl muc = new UC_Usuarios();
+         //   windowManager.AddOrShow(muc, "Usuários", "UC_USR-4575", false);
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
@@ -108,7 +108,7 @@ namespace Financeiro
 
         private void fecharTodosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            windowManager.CloseAll();
+            windowManager.CloseAll(true);
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -118,8 +118,8 @@ namespace Financeiro
 
         private void btTiposMov_Click(object sender, EventArgs e)
         {
-            IManagedUserControl muc = new UC_TiposMovimento();
-            windowManager.AddOrShow(muc, "Tipos de movimento", "UC_TMV-45754", false);
+          //  IManagedUserControl muc = new UC_TiposMovimento();
+           //  windowManager.AddOrShow(muc, "Tipos de movimento", "UC_TMV-45754", false);
         }
 
         private void minimizarTodosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,6 +129,56 @@ namespace Financeiro
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btEmpresa_Click(object sender, EventArgs e)
+        {
+            IManagedUserControl muc = new CadastroEmpresa();
+            windowManager.AddOrShow(muc, "Empresas", "UC_EMPR-4487", false);
+        }
+
+        private void btExportar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btAbrirBusca_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Find();
+        }
+
+        private void btNovo_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.New();
+        }
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Edit();
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Save();
+        }
+
+        private void btPrimeiroRegistro_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.First();
+        }
+
+        private void btRegistroAnterior_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Previous();
+        }
+
+        private void btProximoRegistro_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Next();
+        }
+
+        private void btUltimoRegistro_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Last();
         }
     }
 }

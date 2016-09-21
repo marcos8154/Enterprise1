@@ -1,4 +1,4 @@
-/* 19/09/2016 20:51:34 */
+/* 20/09/2016 18:29:07 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -16,7 +16,6 @@ namespace Entidades
     public class Usuarios : Entity
     {
         public int Id { get; set; }
-        public int Loja { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
         public string Email_rec { get; set; }

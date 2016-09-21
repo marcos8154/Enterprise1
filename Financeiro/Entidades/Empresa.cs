@@ -1,4 +1,4 @@
-/* 19/09/2016 20:51:33 */
+/* 20/09/2016 20:06:29 */
 /* AUTO-GENERATED CLASS */
 /* DOES NOT ADD PROPERTIES */
 /* DOES NOT CHANGE NAME OF PROPERTIES */
@@ -24,6 +24,8 @@ namespace Entidades
         public string Celular { get; set; }
         public string Email { get; set; }
         public string Responsavel { get; set; }
+        public bool Ativo { get; set; }
+        public int Tipo { get; set; }
         public int Enderecos_id { get; set; }
     }
 }

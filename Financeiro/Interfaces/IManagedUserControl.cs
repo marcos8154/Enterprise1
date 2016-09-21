@@ -16,5 +16,27 @@ namespace Financeiro.Interfaces
         string WindowID { get; set; }
 
         bool IsValid();
+
+        void Find();
+
+        void New();
+
+        void Save();
+
+        void Edit();
+
+        void First();
+
+        void Previous();
+
+        void Next();
+
+        void Last();
+
+        void Help();
+
+        void OnRestore();
+
+        BarraTarefas BarraTarefas { get; set; }
     }
 }

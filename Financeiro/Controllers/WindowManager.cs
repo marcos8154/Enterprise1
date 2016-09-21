@@ -15,11 +15,15 @@ namespace Financeiro.Controllers
     {
         private List<IManagedWindow> managedsWindows = new List<IManagedWindow>();
         public ToolStripMenuItem menuJanela { get; set; }
+        public ToolStrip BarraTarefas { get; set; }
+
+        public IManagedUserControl CurrentUserControl { get; set; }
 
         public void CloseAll(bool withMenu = false)
         {
+            BarraTarefas.Enabled = false;
             ignore = true;
-            foreach(IManagedWindow imw in managedsWindows)
+            foreach (IManagedWindow imw in managedsWindows)
             {
                 imw.CURRENT_FORM.Close();
 
@@ -56,25 +60,20 @@ namespace Financeiro.Controllers
 
         public void AddOrShow(IManagedUserControl managedUserControl, string title, string windowID, bool sizable = true, bool maximized = false)
         {
-           // ignore = false;
+            BarraTarefas.Enabled = true;
+            CurrentUserControl = managedUserControl;
 
             IManagedWindow managedWindow = new BaseWindow(managedUserControl, title, sizable, false);
             managedWindow.WindowID = windowID;
             managedWindow.ManagedUserControl.WindowID = windowID;
+            managedWindow.ManagedUserControl.BarraTarefas = new Interfaces.BarraTarefas(BarraTarefas);
 
-            if(maximized)
-            {
-                managedWindow.CURRENT_FORM.WindowState = FormWindowState.Maximized;
-            }
-
+            if (maximized) managedWindow.CURRENT_FORM.WindowState = FormWindowState.Maximized;
             if (!managedWindow.ManagedUserControl.IsValid()) return;
 
             var test = from window in managedsWindows where window.WindowID == windowID select window;
 
-            if (test.Count() > 0)
-            {
-                RecoverWindow(windowID);
-            }
+            if (test.Count() > 0) RecoverWindow(windowID);
             else
             {
                 managedsWindows.Add(managedWindow);
@@ -82,6 +81,7 @@ namespace Financeiro.Controllers
                 managedWindow.CURRENT_FORM.Resize += CURRENT_FORM_Resize;
                 managedWindow.CURRENT_FORM.KeyPreview = true;
                 managedWindow.CURRENT_FORM.KeyDown += CURRENT_FORM_KeyDown;
+                managedWindow.CURRENT_FORM.GotFocus += CURRENT_FORM_GotFocus;
                 managedWindow.CURRENT_FORM.Show();
 
                 ToolStripMenuItem item = new ToolStripMenuItem();
@@ -95,10 +95,20 @@ namespace Financeiro.Controllers
             }
         }
 
+        private void CURRENT_FORM_GotFocus(object sender, EventArgs e)
+        {
+            Form form = (sender as Form);
+            IManagedWindow managedWindow = (form as IManagedWindow);
+            CurrentUserControl = managedWindow.ManagedUserControl;
+            BarraTarefas.Enabled = true;
+        }
+
         void CURRENT_FORM_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
+                this.CurrentUserControl = null;
+                BarraTarefas.Enabled = false;
                 Form form = (sender as Form);
                 form.Close();
             }
@@ -119,22 +129,34 @@ namespace Financeiro.Controllers
 
         public void RecoverWindow(string WindowID)
         {
-            foreach (IManagedWindow managedWw in managedsWindows)
+            IManagedWindow current = null;
+            try
             {
-                if (managedWw.WindowID == WindowID)
+                foreach (IManagedWindow managedWw in managedsWindows)
                 {
-                    managedWw.CURRENT_FORM.Visible = true;
-                    managedWw.CURRENT_FORM.WindowState = FormWindowState.Normal;
-
-                    break;
+                    if (managedWw.WindowID == WindowID)
+                    {
+                        current = managedWw;
+                        CurrentUserControl = managedWw.ManagedUserControl;
+                        managedWw.CURRENT_FORM.Visible = true;
+                        managedWw.CURRENT_FORM.WindowState = FormWindowState.Normal;
+                        BarraTarefas.Enabled = true;
+                        break;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                current = new BaseWindow(current.ManagedUserControl, current.Title, current.Sizable);
+                managedsWindows.Remove(current);
+                AddOrShow(current.ManagedUserControl, current.Title, current.WindowID, current.Sizable);
             }
         }
 
         private void CURRENT_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             if (ignore) return;
-
+            BarraTarefas.Enabled = false;
             Form form = (sender as Form);
             var sel = from search in managedsWindows where search.WindowID == (form as IManagedWindow).WindowID select search;
 
@@ -173,7 +195,7 @@ namespace Financeiro.Controllers
                     AddOrShow(uc, window.Title, window.WindowID, window.Sizable);
                 }
             }
-            catch (Exception ex){ }
+            catch (Exception ex) { }
         }
 
         public void SaveState()
@@ -186,9 +208,10 @@ namespace Financeiro.Controllers
 
         public void MinimizeAll()
         {
+            BarraTarefas.Enabled = false;
             try
             {
-                foreach(IManagedWindow window in managedsWindows)
+                foreach (IManagedWindow window in managedsWindows)
                 {
                     window.CURRENT_FORM.WindowState = FormWindowState.Minimized;
                 }

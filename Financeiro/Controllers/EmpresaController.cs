@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Financeiro.Enums;
 using Financeiro.SessionProvider;
 using Persistor.EntityManager;
 using Persistor.Persistence;
@@ -13,16 +14,26 @@ namespace Financeiro.Controllers
 {
     public class EmpresaController
     {
-        public static Empresa Carregar()
+        public static int GetID(ORDEM ordem)
+        {
+            Empresa e = new Empresa();
+            if (ordem == ORDEM.PRIMEIRO) EntidadeController.Primeiro_id(e);
+            if (ordem == ORDEM.ULTIMO) EntidadeController.Ultimo_id(e);
+
+            return e.Id;
+        }
+
+
+        public static Empresa Carregar(int id_empr)
         {
             Session session = null;
 
             try
             {
-                session = new ConfigureSession().GetSession();
                 Empresa empresa = new Empresa();
 
-                session.OnID(empresa, 1);
+                session = new ConfigureSession().GetSession();
+                session.OnID(empresa, id_empr);
                 session.Close();
 
                 return empresa;
