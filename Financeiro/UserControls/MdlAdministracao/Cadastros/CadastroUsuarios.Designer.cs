@@ -157,7 +157,7 @@
             this.yellowButton1.ButtonText = "&Sair";
             this.yellowButton1.Location = new System.Drawing.Point(274, 91);
             this.yellowButton1.Name = "yellowButton1";
-            this.yellowButton1.Size = new System.Drawing.Size(75, 26);
+            this.yellowButton1.Size = new System.Drawing.Size(56, 26);
             this.yellowButton1.TabIndex = 7;
             this.yellowButton1.Yb_Click += new Financeiro.UserControls.Especiais.YellowButton.YB_Click(this.yellowButton1_Yb_Click);
             // 
