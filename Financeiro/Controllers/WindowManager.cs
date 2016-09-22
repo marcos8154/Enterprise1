@@ -108,6 +108,7 @@ namespace Financeiro.Controllers
             Form form = (sender as Form);
             IManagedWindow managedWindow = (form as IManagedWindow);
             CurrentUserControl = managedWindow.ManagedUserControl;
+            CurrentUserControl.OnRestore();
             BarraTarefas.Enabled = true;
         }
 
@@ -126,7 +127,15 @@ namespace Financeiro.Controllers
         {
             Form form = (sender as Form);
 
-            if (form.WindowState == FormWindowState.Minimized) form.Visible = false;
+            if (form.WindowState == FormWindowState.Minimized)
+            {
+                form.Visible = false;
+                BarraTarefas.Enabled = false;
+            }
+            else
+            {
+                BarraTarefas.Enabled = true;
+            }
         }
 
         void item_Click(object sender, EventArgs e)
@@ -227,6 +236,37 @@ namespace Financeiro.Controllers
 
             }
             catch { }
+        }
+    }
+
+    public class NonManagedWindows
+    {
+        static List<Form> forms = null;
+
+        public static WindowManager WindowManager { get; set; }
+
+        public static void Initialize()
+        {
+            forms  = new List<Form>();
+        }
+
+        public static void Add(Form form)
+        {
+            forms.Add(form);
+        }
+
+        public static void CloseAll()
+        {
+            var results = from result in forms where result != null select result;
+
+            foreach(Form form in results)
+            {
+                try
+                {
+                    form.Close();
+                }
+                catch { }
+            }
         }
     }
 }

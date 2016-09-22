@@ -12,6 +12,8 @@ using Financeiro.Controllers;
 using DevComponents.DotNetBar.Controls;
 using DevComponents.Editors;
 using Financeiro.Util;
+using Financeiro.UserControls.MdlAdministracao.Consultas;
+using Financeiro.Forms;
 
 namespace Financeiro.UserControls.MdlAdministracao.Cadastros
 { 
@@ -57,7 +59,15 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
 
         public void Find()
         {
+            BuscarEmpresa be = new BuscarEmpresa();
+            new BaseWindow(be, "Buscar empresa");
 
+            if(be.Id_selecionado != 0)
+            {
+                Id_atual = be.Id_selecionado;
+                Carregar();
+                Edit();
+            }
         }
 
         public void Help()
@@ -158,7 +168,7 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             txNumero.Value = endereco.Numero;
             txLogradouro.Text = endereco.Logradouro;
             txCompl.Text = endereco.Complemento;
-            if (!string.IsNullOrEmpty(endereco.Logradouro)) txNumero.Focus(); ;
+          //  if (!string.IsNullOrEmpty(endereco.Logradouro)) txNumero.Focus(); ;
         }
 
         public void Save()
@@ -216,6 +226,7 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
                 return;
             }
 
+            this.Enabled = false;
             BarraTarefas.Bt_Excluir(true);
             BarraTarefas.Bt_Editar(true);
             BarraTarefas.Bt_Salvar(false);

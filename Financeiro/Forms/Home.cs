@@ -22,10 +22,6 @@ namespace Financeiro
         public Home()
         {
             InitializeComponent();
-
-            windowManager.menuJanela = menuJanela;
-            windowManager.BarraTarefas = barraTarefas;
-            Notificacao.Inicializar(imgIconeNotificacao, lbNotificacao);
         }
 
         private void mdlAdministracao_ExpandedChanged(object sender, ExpandedChangeEventArgs e)
@@ -98,7 +94,9 @@ namespace Financeiro
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
+            NonManagedWindows.CloseAll();
             windowManager.SaveState();
+            windowManager.CloseAll(true);
         }
 
         private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +112,11 @@ namespace Financeiro
         private void Home_Load(object sender, EventArgs e)
         {
             windowManager.RestoreState();
+            windowManager.menuJanela = menuJanela;
+            windowManager.BarraTarefas = barraTarefas;
+            Notificacao.Inicializar(imgIconeNotificacao, lbNotificacao);
+            NonManagedWindows.Initialize();
+            NonManagedWindows.WindowManager = windowManager;
         }
 
         private void btTiposMov_Click(object sender, EventArgs e)

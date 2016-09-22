@@ -1,4 +1,5 @@
-﻿using Financeiro.Interfaces;
+﻿using Financeiro.Controllers;
+using Financeiro.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,15 +42,16 @@ namespace Financeiro.Forms
 
         public BaseWindow(UserControl userControl, string title)
         {
-            this.TopMost = true;
             this.Width = userControl.Width + 20;
             this.Height = userControl.Height + 40;
             this.Controls.Add(userControl);
             this.Text = title;
-            Title = title;
+            this.Title = title;
             this.MaximizeBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            StartPosition = FormStartPosition.CenterScreen;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.TopMost = true;
+            NonManagedWindows.Add(this);
             this.ShowDialog();
         }
 

@@ -23,6 +23,57 @@ namespace Financeiro.Controllers
             return e.Id;
         }
 
+        public static List<Empresa> Listar(string busca = "")
+        {
+            Session session = null;
+            try
+            {
+                session = new ConfigureSession().GetSession();
+
+                Empresa empresa = new Empresa();
+                Enderecos endereco = new Enderecos();
+
+                if(!string.IsNullOrEmpty(busca))
+                {
+                    Join join = new Join(empresa);
+                    join.AddJoin(Persistor_GA.GeneralClasses.Enums.JOIN_TYPE.INNER, endereco, "empresa.enderecos_id = enderecos.id");
+
+                    string criterio = " WHERE ";
+                    criterio += " nome_fantasia like '%{busca}%' OR";
+                    criterio += " razao_social like '%{buca}%' OR";
+                    criterio += " CNPJ like '%{busca}%' OR";
+                    criterio += " telefone1 like '%{busca}%' OR";
+                    criterio += " telefone2 like '%{busca}%' OR";
+                    criterio += " celular like '%{busca}%' OR";
+                    criterio += " email like '%{busca}%' OR";
+                    criterio += " municipio like '%{busca}%'";
+
+                    busca = busca.Replace("'", "");
+                    criterio = criterio.Replace("{busca}", busca);
+                    join.AddFinalCondition(criterio);
+                    join.Execute(session);
+                    session.Close();
+                    return join.GetList(empresa);
+                }
+                else
+                {
+                    session.ReadAll(empresa);
+                }
+
+                session.Close();
+                return session.GetList(empresa);
+
+            }
+            catch(Exception ex)
+            {
+                if (session != null) session.Close();
+                Notificacao.Erro(ex.Message);
+                Log.Write("EmpresaController", "listar", ex.Message);
+
+                return new List<Empresa>();
+            }
+
+        }
 
         public static Empresa Carregar(int id_empr)
         {

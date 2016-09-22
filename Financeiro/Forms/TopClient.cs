@@ -146,10 +146,12 @@ namespace Financeiro.Forms
             }
             catch (Exception ex)
             {
+                NonManagedWindows.WindowManager.CloseAll(true);
                 this.Visible = true;
                 Log.Write("TopClient", "Conectar", ex.Message);
-                MessageBox.Show("O sistema encontrou problemas em processar a solicitação e precisará ser encerrado. \n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                MessageBox.Show("O sistema encontrou problemas ao processar a solicitação e não\nconseguiu se recuperar da falha. \n\nAs informações do erro foram salvas no Log para futura análise do suporte técnico. \n\nDetalhes do erro: \n\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             
+                // Application.Exit();
             }
         }
 

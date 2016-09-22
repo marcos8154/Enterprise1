@@ -25,6 +25,7 @@ namespace Financeiro.Controllers
 
                 if (enderecoBusca.WasFound)
                 {
+                    enderecoRetorno.CEP = CEP;
                     enderecoRetorno.Logradouro = enderecoBusca.Street;
                     enderecoRetorno.Municipio = enderecoBusca.City;
                     enderecoRetorno.UF = enderecoBusca.State;

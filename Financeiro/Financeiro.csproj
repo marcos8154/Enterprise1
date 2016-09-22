@@ -188,6 +188,12 @@
     <Compile Include="UserControls\MdlAdministracao\Cadastros\CadastroUsuarios.Designer.cs">
       <DependentUpon>CadastroUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MdlAdministracao\Consultas\BuscarEmpresa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MdlAdministracao\Consultas\BuscarEmpresa.Designer.cs">
+      <DependentUpon>BuscarEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Alerta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MdlAdministracao\Cadastros\CadastroUsuarios.resx">
       <DependentUpon>CadastroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MdlAdministracao\Consultas\BuscarEmpresa.resx">
+      <DependentUpon>BuscarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Util\Alerta.resx">
       <DependentUpon>Alerta.cs</DependentUpon>
@@ -383,7 +392,6 @@
     <None Include="Resources\1472961465_vector_66_091.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserControls\MdlAdministracao\Consultas\" />
     <Folder Include="UserControls\MdlCompras\Cadastros\" />
     <Folder Include="UserControls\MdlCompras\Consultas\" />
     <Folder Include="UserControls\MdlEstoque\Cadastros\" />

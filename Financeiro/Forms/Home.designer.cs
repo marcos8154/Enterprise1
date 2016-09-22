@@ -102,7 +102,6 @@
             this.lbSair = new System.Windows.Forms.Label();
             this.lbNotificacao = new System.Windows.Forms.Label();
             this.lbData = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.barraTarefas = new System.Windows.Forms.ToolStrip();
             this.btExportarExcel = new System.Windows.Forms.ToolStripButton();
             this.btAbrirBusca = new System.Windows.Forms.ToolStripButton();
@@ -114,9 +113,10 @@
             this.btRegistroAnterior = new System.Windows.Forms.ToolStripButton();
             this.btProximoRegistro = new System.Windows.Forms.ToolStripButton();
             this.btUltimoRegistro = new System.Windows.Forms.ToolStripButton();
+            this.btRefresh = new System.Windows.Forms.ToolStripButton();
             this.btCalc = new System.Windows.Forms.ToolStripButton();
             this.btHelp = new System.Windows.Forms.ToolStripButton();
-            this.btRefresh = new System.Windows.Forms.ToolStripButton();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panel1.SuspendLayout();
             this.mdlPessoas.SuspendLayout();
             this.mdlCompras.SuspendLayout();
@@ -1198,18 +1198,9 @@
             this.lbData.TabIndex = 0;
             this.lbData.Text = "00/00/00 00:00:00";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(504, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // barraTarefas
             // 
+            this.barraTarefas.BackColor = System.Drawing.Color.WhiteSmoke;
             this.barraTarefas.Enabled = false;
             this.barraTarefas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btExportarExcel,
@@ -1341,6 +1332,17 @@
             this.btUltimoRegistro.Text = "Último registro";
             this.btUltimoRegistro.Click += new System.EventHandler(this.btUltimoRegistro_Click);
             // 
+            // btRefresh
+            // 
+            this.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btRefresh.Image = global::Financeiro.Properties.Resources.refresh;
+            this.btRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(36, 36);
+            this.btRefresh.Text = "Atualizar dados";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
             // btCalc
             // 
             this.btCalc.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1361,24 +1363,28 @@
             this.btHelp.Size = new System.Drawing.Size(36, 36);
             this.btHelp.Text = "Ajuda";
             // 
-            // btRefresh
+            // labelX1
             // 
-            this.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btRefresh.Image = global::Financeiro.Properties.Resources.refresh;
-            this.btRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(36, 36);
-            this.btRefresh.Text = "Atualizar dados";
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            this.labelX1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelX1.BackColor = System.Drawing.Color.WhiteSmoke;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.labelX1.Location = new System.Drawing.Point(664, 29);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(332, 23);
+            this.labelX1.TabIndex = 14;
+            this.labelX1.Text = "Empresa - Cidade";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.Controls.Add(this.labelX1);
             this.Controls.Add(this.barraTarefas);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.informBar);
             this.Controls.Add(this.mdlAdministracao);
@@ -1484,7 +1490,6 @@
         private System.Windows.Forms.ToolStripMenuItem movimentaçãoDeProdutosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem totaisEmComissãoPVendedorToolStripMenuItem;
         private System.Windows.Forms.Button btLocaisEstoque;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStrip barraTarefas;
         private System.Windows.Forms.ToolStripButton btAbrirBusca;
         private System.Windows.Forms.ToolStripButton btExportarExcel;
@@ -1499,6 +1504,7 @@
         private System.Windows.Forms.ToolStripButton btSalvar;
         private System.Windows.Forms.ToolStripButton btExcluir;
         private System.Windows.Forms.ToolStripButton btRefresh;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }
 
