@@ -19,22 +19,6 @@ namespace Financeiro.Forms
             InitializeComponent();
 
             Log.Configurar();
-          
-            List<Usuarios> usuarios = UsuariosController.Listar("");
-
-            if(usuarios.Count == 0)
-            {
-             
-                Usuarios usuario = new Usuarios();
-
-                usuario.Nome = "Admin";
-                usuario.Senha = "12345678";
-
-                Permissoes permissoes = new Permissoes();
-                permissoes.Admin = true;
-
-                UsuariosController.Salvar(usuario, permissoes);
-            }
 
             txUsuario.Focus();
         }
@@ -83,6 +67,11 @@ namespace Financeiro.Forms
         private void btCancelar_Yb_Click()
         {
             System.Environment.Exit(0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetupController.SystemFirstUse();
         }
     }
 }

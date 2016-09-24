@@ -16,7 +16,7 @@ using Financeiro.UserControls.MdlAdministracao.Consultas;
 using Financeiro.Forms;
 
 namespace Financeiro.UserControls.MdlAdministracao.Cadastros
-{ 
+{
     public partial class CadastroEmpresa : UserControl, IManagedUserControl
     {
         private int Id_atual = 0;
@@ -51,6 +51,13 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
 
         public void Edit()
         {
+            Permissoes p = UsuariosController.CarregarPermissoes(Enums.Rotina.Empresa);
+            if (!p.Alterar)
+            {
+                Notificacao.Alerta("Solicitação negada.");
+                return;
+            }
+
             if (Id_atual == 0) return;
             BarraTarefas.Bt_Editar(false);
             BarraTarefas.Bt_Salvar(true);
@@ -62,7 +69,7 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             BuscarEmpresa be = new BuscarEmpresa();
             new BaseWindow(be, "Buscar empresa");
 
-            if(be.Id_selecionado != 0)
+            if (be.Id_selecionado != 0)
             {
                 Id_atual = be.Id_selecionado;
                 Carregar();
@@ -76,6 +83,13 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
 
         public void Delete()
         {
+            Permissoes p = UsuariosController.CarregarPermissoes(Enums.Rotina.Empresa);
+            if (!p.Excluir)
+            {
+                Notificacao.Alerta("Solicitação negada.");
+                return;
+            }
+
             string msg = "Esta ação não poderá ser revertida. Excluír a empresa mesmo assim?";
             if (new Confirmacao(msg).Result)
             {
@@ -91,8 +105,8 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
 
         public bool IsValid()
         {
-            Permissoes p = UsuariosController.CarregarPermissoes(UsuariosController.UsuarioLogado.Id);
-            return p.Admin;
+            Permissoes p = UsuariosController.CarregarPermissoes(Enums.Rotina.Empresa);
+            return p.Acesso;
         }
 
         int ultima_id = 0;
@@ -114,6 +128,13 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
 
         public void New()
         {
+            Permissoes p = UsuariosController.CarregarPermissoes(Enums.Rotina.Empresa);
+            if (!p.Inserir)
+            {
+                Notificacao.Alerta("Solicitação negada.");
+                return;
+            }
+
             this.Enabled = true;
             IMucController.LimparCampos(this);
             BarraTarefas.Bt_Salvar(true);
@@ -168,7 +189,7 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             txNumero.Value = endereco.Numero;
             txLogradouro.Text = endereco.Logradouro;
             txCompl.Text = endereco.Complemento;
-          //  if (!string.IsNullOrEmpty(endereco.Logradouro)) txNumero.Focus(); ;
+            //  if (!string.IsNullOrEmpty(endereco.Logradouro)) txNumero.Focus(); ;
         }
 
         public void Save()
@@ -221,15 +242,14 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             {
                 BarraTarefas.Bt_Excluir(false);
                 BarraTarefas.Bt_Editar(false);
-                BarraTarefas.Bt_Salvar(false);
+                BarraTarefas.Bt_Salvar(this.Enabled);
                 BarraTarefas.Bt_Novo(true);
                 return;
             }
 
-            this.Enabled = false;
             BarraTarefas.Bt_Excluir(true);
             BarraTarefas.Bt_Editar(true);
-            BarraTarefas.Bt_Salvar(false);
+            BarraTarefas.Bt_Salvar(this.Enabled);
             BarraTarefas.Bt_Novo(true);
         }
 

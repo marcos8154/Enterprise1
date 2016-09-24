@@ -32,7 +32,7 @@
             this.lbMSG = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mdlPessoas = new DevComponents.DotNetBar.ExpandablePanel();
-            this.btFuncionarios = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.btClientes = new System.Windows.Forms.Button();
             this.btFornecedores = new System.Windows.Forms.Button();
             this.mdlCompras = new DevComponents.DotNetBar.ExpandablePanel();
@@ -40,6 +40,7 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.mdlEstoque = new DevComponents.DotNetBar.ExpandablePanel();
+            this.button5 = new System.Windows.Forms.Button();
             this.btLocaisEstoque = new System.Windows.Forms.Button();
             this.btCaract = new System.Windows.Forms.Button();
             this.btGrupos = new System.Windows.Forms.Button();
@@ -56,13 +57,17 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.mdlFinanceiro = new DevComponents.DotNetBar.ExpandablePanel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btCaixa = new System.Windows.Forms.Button();
             this.btFormasPag = new System.Windows.Forms.Button();
             this.btMovimentos = new System.Windows.Forms.Button();
             this.btTiposMov = new System.Windows.Forms.Button();
+            this.btFuncionarios = new System.Windows.Forms.Button();
             this.mdlAdministracao = new DevComponents.DotNetBar.ExpandablePanel();
+            this.btGrupo_usuarios = new System.Windows.Forms.Button();
             this.btEmpresa = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,11 +124,6 @@
             this.btCalc = new System.Windows.Forms.ToolStripButton();
             this.btHelp = new System.Windows.Forms.ToolStripButton();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.mdlPessoas.SuspendLayout();
             this.mdlCompras.SuspendLayout();
@@ -209,21 +209,21 @@
             this.mdlPessoas.TitleStyle.MarginLeft = 8;
             this.mdlPessoas.TitleText = "Parceiros de negócio";
             // 
-            // btFuncionarios
+            // button6
             // 
-            this.btFuncionarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btFuncionarios.BackColor = System.Drawing.Color.Navy;
-            this.btFuncionarios.FlatAppearance.BorderSize = 0;
-            this.btFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btFuncionarios.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btFuncionarios.Location = new System.Drawing.Point(-1, 117);
-            this.btFuncionarios.Name = "btFuncionarios";
-            this.btFuncionarios.Size = new System.Drawing.Size(299, 31);
-            this.btFuncionarios.TabIndex = 12;
-            this.btFuncionarios.Text = "Funcionários";
-            this.btFuncionarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btFuncionarios.UseVisualStyleBackColor = false;
+            this.button6.BackColor = System.Drawing.Color.Navy;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button6.Location = new System.Drawing.Point(0, 88);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(300, 31);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Transportadoras";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // btClientes
             // 
@@ -406,6 +406,22 @@
             this.mdlEstoque.TitleStyle.GradientAngle = 90;
             this.mdlEstoque.TitleStyle.MarginLeft = 8;
             this.mdlEstoque.TitleText = "Estoque";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.Navy;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button5.Location = new System.Drawing.Point(0, 277);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(299, 31);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Armazéns";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // btLocaisEstoque
             // 
@@ -734,6 +750,38 @@
             this.mdlFinanceiro.TitleText = "Financeiro";
             this.mdlFinanceiro.ExpandedChanged += new DevComponents.DotNetBar.ExpandChangeEventHandler(this.mdlFinanceiro_ExpandedChanged);
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.Navy;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button3.Location = new System.Drawing.Point(0, 243);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(300, 31);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Contas a receber";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Navy;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button1.Location = new System.Drawing.Point(0, 212);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(300, 31);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Contas a pagar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -831,6 +879,22 @@
             this.btTiposMov.UseVisualStyleBackColor = false;
             this.btTiposMov.Click += new System.EventHandler(this.btTiposMov_Click);
             // 
+            // btFuncionarios
+            // 
+            this.btFuncionarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btFuncionarios.BackColor = System.Drawing.Color.Navy;
+            this.btFuncionarios.FlatAppearance.BorderSize = 0;
+            this.btFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFuncionarios.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btFuncionarios.Location = new System.Drawing.Point(-1, 117);
+            this.btFuncionarios.Name = "btFuncionarios";
+            this.btFuncionarios.Size = new System.Drawing.Size(299, 31);
+            this.btFuncionarios.TabIndex = 12;
+            this.btFuncionarios.Text = "Funcionários";
+            this.btFuncionarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btFuncionarios.UseVisualStyleBackColor = false;
+            // 
             // mdlAdministracao
             // 
             this.mdlAdministracao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -838,7 +902,7 @@
             this.mdlAdministracao.ButtonImageCollapse = global::Financeiro.Properties.Resources.old_building;
             this.mdlAdministracao.ButtonImageExpand = global::Financeiro.Properties.Resources.old_building;
             this.mdlAdministracao.CanvasColor = System.Drawing.SystemColors.Control;
-            this.mdlAdministracao.Controls.Add(this.button4);
+            this.mdlAdministracao.Controls.Add(this.btGrupo_usuarios);
             this.mdlAdministracao.Controls.Add(this.btFuncionarios);
             this.mdlAdministracao.Controls.Add(this.btEmpresa);
             this.mdlAdministracao.Controls.Add(this.button2);
@@ -877,6 +941,23 @@
             this.mdlAdministracao.TitleStyle.MarginLeft = 8;
             this.mdlAdministracao.TitleText = "Administração";
             this.mdlAdministracao.ExpandedChanged += new DevComponents.DotNetBar.ExpandChangeEventHandler(this.mdlAdministracao_ExpandedChanged);
+            // 
+            // btGrupo_usuarios
+            // 
+            this.btGrupo_usuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGrupo_usuarios.BackColor = System.Drawing.Color.Navy;
+            this.btGrupo_usuarios.FlatAppearance.BorderSize = 0;
+            this.btGrupo_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btGrupo_usuarios.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btGrupo_usuarios.Location = new System.Drawing.Point(0, 86);
+            this.btGrupo_usuarios.Name = "btGrupo_usuarios";
+            this.btGrupo_usuarios.Size = new System.Drawing.Size(298, 31);
+            this.btGrupo_usuarios.TabIndex = 12;
+            this.btGrupo_usuarios.Text = "Grupos de usuários / privilégios";
+            this.btGrupo_usuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btGrupo_usuarios.UseVisualStyleBackColor = false;
+            this.btGrupo_usuarios.Click += new System.EventHandler(this.btGrupo_usuarios_Click);
             // 
             // btEmpresa
             // 
@@ -1398,6 +1479,7 @@
             this.btHelp.Name = "btHelp";
             this.btHelp.Size = new System.Drawing.Size(36, 36);
             this.btHelp.Text = "Ajuda";
+            this.btHelp.Click += new System.EventHandler(this.btHelp_Click);
             // 
             // labelX1
             // 
@@ -1413,86 +1495,6 @@
             this.labelX1.Size = new System.Drawing.Size(332, 23);
             this.labelX1.TabIndex = 14;
             this.labelX1.Text = "Empresa - Cidade";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Navy;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button1.Location = new System.Drawing.Point(0, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(300, 31);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Contas a pagar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.Navy;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button3.Location = new System.Drawing.Point(0, 243);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(300, 31);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Contas a receber";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.Navy;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button4.Location = new System.Drawing.Point(0, 86);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(298, 31);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Grupos de usuários / privilégios";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.Navy;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button5.Location = new System.Drawing.Point(0, 277);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(299, 31);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Armazéns";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.Navy;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button6.Location = new System.Drawing.Point(0, 88);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(300, 31);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Transportadoras";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // Home
             // 
@@ -1628,7 +1630,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btGrupo_usuarios;
     }
 }
 

@@ -136,7 +136,7 @@ namespace Financeiro.Forms
                     EnvironmentController.Config = config;
                     Login login = new Login();
                     this.Hide();
-                    login.ShowDialog();
+                    login.Show();
                 }
                 else
                 {

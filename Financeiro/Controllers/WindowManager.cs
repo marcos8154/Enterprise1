@@ -76,8 +76,13 @@ namespace Financeiro.Controllers
             managedWindow.ManagedUserControl.BarraTarefas = new Interfaces.BarraTarefas(BarraTarefas);
 
             if (maximized) managedWindow.CURRENT_FORM.WindowState = FormWindowState.Maximized;
-            if (!managedWindow.ManagedUserControl.IsValid()) return;
-            
+            if (!managedWindow.ManagedUserControl.IsValid())
+            {
+                Notificacao.Alerta("Acesso negado.");
+                BarraTarefas.Enabled = false;
+                return;
+            }
+
             managedsWindows.Add(managedWindow);
             managedWindow.CURRENT_FORM.TopMost = true;
             managedWindow.CURRENT_FORM.KeyPreview = true;
@@ -102,7 +107,7 @@ namespace Financeiro.Controllers
             IManagedWindow managedWindow = (form as IManagedWindow);
             Notificacao.Tela(managedWindow.Title);
             CurrentUserControl = managedWindow.ManagedUserControl;
-            CurrentUserControl.OnRestore();
+           
             BarraTarefas.Enabled = true;
         }
         
@@ -136,6 +141,7 @@ namespace Financeiro.Controllers
             else
             {
                 BarraTarefas.Enabled = true;
+                CurrentUserControl.OnRestore();
             }
         }
 

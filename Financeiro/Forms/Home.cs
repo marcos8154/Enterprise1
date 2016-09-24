@@ -193,5 +193,16 @@ namespace Financeiro
         {
             windowManager.CurrentUserControl.OnReload();
         }
+
+        private void btGrupo_usuarios_Click(object sender, EventArgs e)
+        {
+            IManagedUserControl muc = new CadastroGrupos();
+            windowManager.AddOrShow(muc, "Grupos de usuários / Privilégios", "UC_GRP-45744", false);
+        }
+
+        private void btHelp_Click(object sender, EventArgs e)
+        {
+            windowManager.CurrentUserControl.Help();
+        }
     }
 }

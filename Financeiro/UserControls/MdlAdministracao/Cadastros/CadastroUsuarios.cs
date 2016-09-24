@@ -42,8 +42,9 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
 
         public bool IsValid()
         {
-            Permissoes p = UsuariosController.CarregarPermissoes(UsuariosController.UsuarioLogado.Id);
-            return p.Admin;
+            //Permissoes p = UsuariosController.CarregarPermissoes(UsuariosController.UsuarioLogado.Id);
+            return true;
+         //   return p.Admin;
         }
 
         public void Find()
@@ -69,10 +70,10 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             usuario.Senha = txSenha.Text;
             usuario.Ativo = ckAtivo.Checked;
 
-            Permissoes perm = UsuariosController.CarregarPermissoes(id_atual);
-            perm.Usuarios_id = usuario.Id;
+          //  Permissoes perm = UsuariosController.CarregarPermissoes(id_atual);
+          //  perm.Usuarios_id = usuario.Id;
 
-            if (UsuariosController.Salvar(usuario, perm)) (Parent as Form).Close();
+          //  if (UsuariosController.Salvar(usuario, perm)) (Parent as Form).Close();
         }
 
         public void Delete()

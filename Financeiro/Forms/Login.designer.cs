@@ -51,6 +51,7 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.btEncerrar = new Financeiro.UserControls.Especiais.YellowButton();
             this.btLogin = new Financeiro.UserControls.Especiais.YellowButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -340,6 +341,16 @@
             this.btLogin.Size = new System.Drawing.Size(69, 26);
             this.btLogin.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(62, 113);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +358,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 562);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelX6);
             this.Controls.Add(this.labelX7);
             this.Controls.Add(this.panel1);
@@ -386,5 +398,6 @@
         private DevComponents.DotNetBar.Controls.Line line2;
         private UserControls.Especiais.YellowButton btOk;
         private UserControls.Especiais.YellowButton btCancelar;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Financeiro.Enums;
 using Financeiro.Forms;
 using Financeiro.Interfaces;
 using Financeiro.SessionProvider;
@@ -62,8 +63,6 @@ namespace Financeiro.Controllers
 
                     c.Execute();
                 }
-
-
                 else
                     session.ReadAll(usuarios, "ativo " + (usuarios_inativos ? "IN (0, 1)" : "IN (1)"));
 
@@ -81,17 +80,19 @@ namespace Financeiro.Controllers
             }
         }
 
-        public static Permissoes CarregarPermissoes(int usuarios_id)
+        public static Permissoes CarregarPermissoes(Rotina rotina)
         {
             Session session = null;
 
             try
             {
+                int rotina_id = (int)rotina;
                 session = new ConfigureSession().GetSession();
                 Permissoes permissoes = new Permissoes();
 
                 session.CreateCriteria(permissoes, Persistor_GA.GeneralClasses.Enums.RESULT_TYPE.UNIQUE)
-                    .Add(Restrictions.Eq(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.WHERE, "usuarios_id", usuarios_id))
+                    .Add(Restrictions.Eq(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.WHERE, "grupos_id", UsuarioLogado.Grupo_id))
+                    .Add(Restrictions.Eq(Persistor_GA.GeneralClasses.Enums.FILTER_TYPE.AND, "rotina_id", rotina_id))
                     .Execute();
 
                 session.Close();
@@ -112,10 +113,9 @@ namespace Financeiro.Controllers
 
             try
             {
-                session = new ConfigureSession().GetSession();
-
                 Usuarios usuario = new Usuarios();
 
+                session = new ConfigureSession().GetSession();
                 session.OnID(usuario, usuario_id);
                 session.Close();
 
@@ -129,10 +129,8 @@ namespace Financeiro.Controllers
             }
         }
 
-        public static bool Salvar(Usuarios usuario, Permissoes permissoes)
+        public static bool Salvar(Usuarios usuario)
         {
-            permissoes.Usuarios_id = usuario.Id;
-
             if (!Validar(usuario)) return false;
             bool result = false;
 
@@ -147,7 +145,6 @@ namespace Financeiro.Controllers
                 if (EntidadeController.Existe(usuario, "id", usuario.Id.ToString()))
                 {
                     session.Update(usuario, null, transaction);
-                    session.Update(permissoes, ("usuarios_id = " + usuario.Id), transaction);
 
                     if (transaction.Commit())
                     {
@@ -165,8 +162,6 @@ namespace Financeiro.Controllers
                     }
 
                     session.Save(usuario, transaction);
-                    permissoes.Usuarios_id = usuario.Id;
-                    session.Save(permissoes, transaction);
 
                     if (transaction.Commit())
                     {
@@ -189,24 +184,29 @@ namespace Financeiro.Controllers
                 return false;
             }
         }
-
+        
         private static bool Validar(Usuarios usuario)
         {
             if (string.IsNullOrWhiteSpace(usuario.Nome))
             {
-                Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.ALERTA, "Nome do usuário inválido!");
+                Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.ALERTA, "Nome do usuário inválido.");
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(usuario.Senha))
             {
-                Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.ALERTA, "A senha do usuário não pode estar vazia!");
+                Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.ALERTA, "A senha do usuário não pode estar vazia.");
                 return false;
+            }
+
+            if(usuario.Grupo_id == 0)
+            {
+                Notificacao.Alerta("O grupo é obrigatório.");
             }
 
             if (usuario.Senha.Length < 6)
             {
-                Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.ALERTA, "A senha deve ter pelo menos 6 caracteres!");
+                Notificacao.Publicar(Enums.TIPO_NOTIFICACAO.ALERTA, "A senha deve ter pelo menos 6 caracteres.");
                 return false;
             }
 

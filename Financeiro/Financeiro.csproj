@@ -70,6 +70,7 @@
     <Compile Include="Controllers\Financeiro_pessoaController.cs" />
     <Compile Include="Controllers\Formas_pagamentoController.cs" />
     <Compile Include="Controllers\GruposController.cs" />
+    <Compile Include="Controllers\Grupos_usuariosController.cs" />
     <Compile Include="Controllers\IMucController.cs" />
     <Compile Include="Controllers\LocaisEstoqueController.cs" />
     <Compile Include="Controllers\Log.cs" />
@@ -77,14 +78,53 @@
     <Compile Include="Controllers\Notificacao.cs" />
     <Compile Include="Controllers\PessoasController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\RotinasController.cs" />
     <Compile Include="Controllers\SetupController.cs" />
     <Compile Include="Controllers\Tipos_movimentoController.cs" />
     <Compile Include="Controllers\UnidadesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\WindowManager.cs" />
     <Compile Include="Controllers\WindowRestoreProfile.cs" />
+    <Compile Include="Entidades\Armazens.cs" />
+    <Compile Include="Entidades\Bancos.cs" />
+    <Compile Include="Entidades\Caixas.cs" />
+    <Compile Include="Entidades\Caracteristicas.cs" />
+    <Compile Include="Entidades\Cedentes.cs" />
+    <Compile Include="Entidades\Contas_bancarias.cs" />
+    <Compile Include="Entidades\Contas_pagar.cs" />
+    <Compile Include="Entidades\Contas_receber.cs" />
+    <Compile Include="Entidades\Documentos.cs" />
+    <Compile Include="Entidades\Empresa.cs" />
+    <Compile Include="Entidades\Enderecos.cs" />
+    <Compile Include="Entidades\Financeiro_pessoa.cs" />
+    <Compile Include="Entidades\Financeiro_produtos.cs" />
+    <Compile Include="Entidades\Formas_pagamento.cs" />
+    <Compile Include="Entidades\Grupos.cs" />
+    <Compile Include="Entidades\Grupos_usuarios.cs" />
+    <Compile Include="Entidades\Itens_movimento.cs" />
+    <Compile Include="Entidades\Itens_pagamento.cs" />
+    <Compile Include="Entidades\Itens_pedido.cs" />
+    <Compile Include="Entidades\Itens_sc.cs" />
+    <Compile Include="Entidades\Locais_estoque.cs" />
+    <Compile Include="Entidades\Movimentos.cs" />
+    <Compile Include="Entidades\Operadoras_cartao.cs" />
+    <Compile Include="Entidades\Pedidos_compra.cs" />
+    <Compile Include="Entidades\Permissoes.cs" />
+    <Compile Include="Entidades\Pessoas.cs" />
+    <Compile Include="Entidades\Produtos.cs" />
+    <Compile Include="Entidades\Produtos_caracteristicas.cs" />
+    <Compile Include="Entidades\Produtos_fornecedores.cs" />
+    <Compile Include="Entidades\Produtos_preco.cs" />
+    <Compile Include="Entidades\Rotinas.cs" />
+    <Compile Include="Entidades\Solicitacoes_compra.cs" />
+    <Compile Include="Entidades\Tabelas_preco.cs" />
+    <Compile Include="Entidades\Tipos_movimento.cs" />
+    <Compile Include="Entidades\Unidades.cs" />
+    <Compile Include="Entidades\Usuarios.cs" />
+    <Compile Include="Entidades\Valores_caixas.cs" />
     <Compile Include="Enums\Fpg_Efetuado_em.cs" />
     <Compile Include="Enums\ORDEM.cs" />
+    <Compile Include="Enums\Rotina.cs" />
     <Compile Include="Enums\Tipo_armazem.cs" />
     <Compile Include="Enums\Tipo_Movimentacao.cs" />
     <Compile Include="Enums\TIPO_NOTIFICACAO.cs" />
@@ -96,6 +136,12 @@
     </Compile>
     <Compile Include="Forms\BaseWindow.designer.cs">
       <DependentUpon>BaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
@@ -121,12 +167,20 @@
     <Compile Include="Forms\NovoAmbiente.designer.cs">
       <DependentUpon>NovoAmbiente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Preparando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preparando.Designer.cs">
+      <DependentUpon>Preparando.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TopClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TopClient.designer.cs">
       <DependentUpon>TopClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpProviders\DefaultDtHlp.cs" />
+    <Compile Include="HelpProviders\Grupos_usuarioHelper.cs" />
     <Compile Include="Interfaces\BarraTarefas.cs" />
     <Compile Include="Interfaces\IManagedUserControl.cs" />
     <Compile Include="Interfaces\IManagedWindow.cs" />
@@ -151,6 +205,12 @@
     </Compile>
     <Compile Include="UserControls\MdlAdministracao\Cadastros\CadastroEmpresa.Designer.cs">
       <DependentUpon>CadastroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MdlAdministracao\Cadastros\CadastroGrupos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MdlAdministracao\Cadastros\CadastroGrupos.Designer.cs">
+      <DependentUpon>CadastroGrupos.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MdlAdministracao\Cadastros\CadastroUsuarios.cs">
       <SubType>UserControl</SubType>
@@ -179,6 +239,9 @@
     <EmbeddedResource Include="Forms\BaseWindow.resx">
       <DependentUpon>BaseWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NovoAmbiente.resx">
       <DependentUpon>NovoAmbiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preparando.resx">
+      <DependentUpon>Preparando.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TopClient.resx">
       <DependentUpon>TopClient.cs</DependentUpon>
@@ -212,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MdlAdministracao\Cadastros\CadastroEmpresa.resx">
       <DependentUpon>CadastroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MdlAdministracao\Cadastros\CadastroGrupos.resx">
+      <DependentUpon>CadastroGrupos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MdlAdministracao\Cadastros\CadastroUsuarios.resx">
       <DependentUpon>CadastroUsuarios.cs</DependentUpon>
@@ -362,7 +431,6 @@
     <None Include="Resources\1472961465_vector_66_091.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entidades\" />
     <Folder Include="UserControls\MdlCompras\Cadastros\" />
     <Folder Include="UserControls\MdlCompras\Consultas\" />
     <Folder Include="UserControls\MdlEstoque\Cadastros\" />
