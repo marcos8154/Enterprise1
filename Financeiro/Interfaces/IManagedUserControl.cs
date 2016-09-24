@@ -41,7 +41,7 @@ namespace Financeiro.Interfaces
 
         void OnLoad();
 
-        void Reload();
+        void OnReload();
 
         BarraTarefas BarraTarefas { get; set; }
     }

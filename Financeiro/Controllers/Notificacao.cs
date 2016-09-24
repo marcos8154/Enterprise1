@@ -11,20 +11,27 @@ namespace Financeiro.Controllers
     public class Notificacao
     {
         private static PictureBox mainPb;
-        private static Label mainLabel;
-
-        public static void Inicializar(PictureBox pb, Label label)
+        private static Label notificacao;
+        private static Label telaAtual;
+        
+        public static void Inicializar(PictureBox pb, Label lbNotificacao, Label lbTelaAtual)
         {
             mainPb = pb;
-            mainLabel = label;
+            notificacao = lbNotificacao;
+            telaAtual = lbTelaAtual;
+            telaAtual.Text = string.Empty;
 
             Publicar(TIPO_NOTIFICACAO.SUCESSO, "Sistema carregado com sucesso.");
+        }
+
+        public static void Tela(string tela)
+        {
+            telaAtual.Text = tela;
         }
 
         public static void Alerta(string msg)
         {
             Publicar(TIPO_NOTIFICACAO.ALERTA, msg);
-           // new Atencao(msg);      
         }
 
         public static void Sucesso(string msg)
@@ -46,21 +53,21 @@ namespace Financeiro.Controllers
                     case TIPO_NOTIFICACAO.ALERTA:
 
                         mainPb.BackgroundImage = Financeiro.Properties.Resources.ic_alerta;
-                        mainLabel.Text = mensagem;
+                        notificacao.Text = mensagem;
 
                         break;
 
                     case TIPO_NOTIFICACAO.ERRO:
 
                         mainPb.BackgroundImage = Financeiro.Properties.Resources.ic_erro;
-                        mainLabel.Text = mensagem;
+                        notificacao.Text = mensagem;
 
                         break;
 
                     case TIPO_NOTIFICACAO.SUCESSO:
 
                         mainPb.BackgroundImage = Financeiro.Properties.Resources.ic_sucesso;
-                        mainLabel.Text = mensagem;
+                        notificacao.Text = mensagem;
 
                         break;
                 }

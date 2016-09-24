@@ -233,7 +233,7 @@ namespace Financeiro.UserControls.MdlAdministracao.Cadastros
             BarraTarefas.Bt_Novo(true);
         }
 
-        public void Reload()
+        public void OnReload()
         {
             Carregar();
         }

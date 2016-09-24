@@ -77,43 +77,12 @@
     <Compile Include="Controllers\Notificacao.cs" />
     <Compile Include="Controllers\PessoasController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\SetupController.cs" />
     <Compile Include="Controllers\Tipos_movimentoController.cs" />
     <Compile Include="Controllers\UnidadesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\WindowManager.cs" />
     <Compile Include="Controllers\WindowRestoreProfile.cs" />
-    <Compile Include="Entidades\Bancos.cs" />
-    <Compile Include="Entidades\Caixas.cs" />
-    <Compile Include="Entidades\Caracteristicas.cs" />
-    <Compile Include="Entidades\Cedentes.cs" />
-    <Compile Include="Entidades\Contas_bancarias.cs" />
-    <Compile Include="Entidades\Contas_pagar.cs" />
-    <Compile Include="Entidades\Contas_receber.cs" />
-    <Compile Include="Entidades\Documentos.cs" />
-    <Compile Include="Entidades\Empresa.cs" />
-    <Compile Include="Entidades\Enderecos.cs" />
-    <Compile Include="Entidades\Financeiro_pessoa.cs" />
-    <Compile Include="Entidades\Financeiro_produtos.cs" />
-    <Compile Include="Entidades\Formas_pagamento.cs" />
-    <Compile Include="Entidades\Grupos.cs" />
-    <Compile Include="Entidades\Itens_movimento.cs" />
-    <Compile Include="Entidades\Itens_pagamento.cs" />
-    <Compile Include="Entidades\Itens_pedido.cs" />
-    <Compile Include="Entidades\Itens_sc.cs" />
-    <Compile Include="Entidades\Locais_estoque.cs" />
-    <Compile Include="Entidades\Movimentos.cs" />
-    <Compile Include="Entidades\Operadoras_cartao.cs" />
-    <Compile Include="Entidades\Pedidos_compra.cs" />
-    <Compile Include="Entidades\Permissoes.cs" />
-    <Compile Include="Entidades\Pessoas.cs" />
-    <Compile Include="Entidades\Produtos.cs" />
-    <Compile Include="Entidades\Produtos_caracteristicas.cs" />
-    <Compile Include="Entidades\Produtos_fornecedores.cs" />
-    <Compile Include="Entidades\Solicitacoes_compra.cs" />
-    <Compile Include="Entidades\Tipos_movimento.cs" />
-    <Compile Include="Entidades\Unidades.cs" />
-    <Compile Include="Entidades\Usuarios.cs" />
-    <Compile Include="Entidades\Valores_caixas.cs" />
     <Compile Include="Enums\Fpg_Efetuado_em.cs" />
     <Compile Include="Enums\ORDEM.cs" />
     <Compile Include="Enums\Tipo_armazem.cs" />
@@ -164,6 +133,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionProvider\ConfigureSession.cs" />
+    <Compile Include="UserControls\Defaults.cs" />
     <Compile Include="UserControls\Especiais\Preparando.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -392,6 +362,7 @@
     <None Include="Resources\1472961465_vector_66_091.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Entidades\" />
     <Folder Include="UserControls\MdlCompras\Cadastros\" />
     <Folder Include="UserControls\MdlCompras\Consultas\" />
     <Folder Include="UserControls\MdlEstoque\Cadastros\" />
@@ -453,6 +424,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

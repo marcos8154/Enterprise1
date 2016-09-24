@@ -71,5 +71,10 @@ namespace Financeiro.Forms
 
 
         public bool Sizable { get; set; }
+
+        private void BaseWindow_Activated(object sender, EventArgs e)
+        {
+         //   Notificacao.Alerta(Title);
+        }
     }
 }

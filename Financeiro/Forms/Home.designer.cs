@@ -98,6 +98,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informBar = new System.Windows.Forms.Panel();
+            this.lbTela = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgIconeNotificacao = new System.Windows.Forms.PictureBox();
             this.lbSair = new System.Windows.Forms.Label();
             this.lbNotificacao = new System.Windows.Forms.Label();
@@ -117,6 +119,11 @@
             this.btCalc = new System.Windows.Forms.ToolStripButton();
             this.btHelp = new System.Windows.Forms.ToolStripButton();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.mdlPessoas.SuspendLayout();
             this.mdlCompras.SuspendLayout();
@@ -126,6 +133,7 @@
             this.mdlAdministracao.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.informBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIconeNotificacao)).BeginInit();
             this.barraTarefas.SuspendLayout();
             this.SuspendLayout();
@@ -163,19 +171,17 @@
             this.mdlPessoas.ButtonImageCollapse = global::Financeiro.Properties.Resources.multiple_users_silhouette;
             this.mdlPessoas.ButtonImageExpand = global::Financeiro.Properties.Resources.multiple_users_silhouette;
             this.mdlPessoas.CanvasColor = System.Drawing.SystemColors.Control;
-            this.mdlPessoas.Controls.Add(this.btFuncionarios);
+            this.mdlPessoas.Controls.Add(this.button6);
             this.mdlPessoas.Controls.Add(this.btClientes);
             this.mdlPessoas.Controls.Add(this.btFornecedores);
             this.mdlPessoas.DisabledBackColor = System.Drawing.Color.Empty;
             this.mdlPessoas.ExpandButtonAlignment = DevComponents.DotNetBar.eTitleButtonAlignment.Left;
-            this.mdlPessoas.Expanded = false;
-            this.mdlPessoas.ExpandedBounds = new System.Drawing.Rectangle(1, 131, 298, 118);
             this.mdlPessoas.ExpandOnTitleClick = true;
             this.mdlPessoas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdlPessoas.HideControlsWhenCollapsed = true;
             this.mdlPessoas.Location = new System.Drawing.Point(0, 130);
             this.mdlPessoas.Name = "mdlPessoas";
-            this.mdlPessoas.Size = new System.Drawing.Size(299, 26);
+            this.mdlPessoas.Size = new System.Drawing.Size(299, 119);
             this.mdlPessoas.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.mdlPessoas.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.mdlPessoas.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -201,7 +207,7 @@
             this.mdlPessoas.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.mdlPessoas.TitleStyle.GradientAngle = 90;
             this.mdlPessoas.TitleStyle.MarginLeft = 8;
-            this.mdlPessoas.TitleText = "Pessoas";
+            this.mdlPessoas.TitleText = "Parceiros de negócio";
             // 
             // btFuncionarios
             // 
@@ -211,9 +217,9 @@
             this.btFuncionarios.FlatAppearance.BorderSize = 0;
             this.btFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btFuncionarios.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btFuncionarios.Location = new System.Drawing.Point(0, 87);
+            this.btFuncionarios.Location = new System.Drawing.Point(-1, 117);
             this.btFuncionarios.Name = "btFuncionarios";
-            this.btFuncionarios.Size = new System.Drawing.Size(300, 31);
+            this.btFuncionarios.Size = new System.Drawing.Size(299, 31);
             this.btFuncionarios.TabIndex = 12;
             this.btFuncionarios.Text = "Funcionários";
             this.btFuncionarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,13 +270,13 @@
             this.mdlCompras.DisabledBackColor = System.Drawing.Color.Empty;
             this.mdlCompras.ExpandButtonAlignment = DevComponents.DotNetBar.eTitleButtonAlignment.Left;
             this.mdlCompras.Expanded = false;
-            this.mdlCompras.ExpandedBounds = new System.Drawing.Rectangle(1, 79, 298, 117);
+            this.mdlCompras.ExpandedBounds = new System.Drawing.Rectangle(306, 170, 298, 117);
             this.mdlCompras.ExpandOnTitleClick = true;
             this.mdlCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdlCompras.HideControlsWhenCollapsed = true;
-            this.mdlCompras.Location = new System.Drawing.Point(0, 78);
+            this.mdlCompras.Location = new System.Drawing.Point(1, 78);
             this.mdlCompras.Name = "mdlCompras";
-            this.mdlCompras.Size = new System.Drawing.Size(299, 26);
+            this.mdlCompras.Size = new System.Drawing.Size(298, 26);
             this.mdlCompras.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.mdlCompras.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.mdlCompras.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -309,7 +315,7 @@
             this.button16.ForeColor = System.Drawing.Color.Cornsilk;
             this.button16.Location = new System.Drawing.Point(0, 87);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(300, 31);
+            this.button16.Size = new System.Drawing.Size(299, 31);
             this.button16.TabIndex = 12;
             this.button16.Text = "Devolução para fornecedor";
             this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,7 +331,7 @@
             this.button17.ForeColor = System.Drawing.Color.Cornsilk;
             this.button17.Location = new System.Drawing.Point(0, 26);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(300, 31);
+            this.button17.Size = new System.Drawing.Size(299, 31);
             this.button17.TabIndex = 11;
             this.button17.Text = "Cotação";
             this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -341,7 +347,7 @@
             this.button18.ForeColor = System.Drawing.Color.Cornsilk;
             this.button18.Location = new System.Drawing.Point(-1, 57);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(300, 31);
+            this.button18.Size = new System.Drawing.Size(299, 31);
             this.button18.TabIndex = 10;
             this.button18.Text = "Pedidos de compra";
             this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -354,6 +360,7 @@
             this.mdlEstoque.ButtonImageCollapse = global::Financeiro.Properties.Resources.bar_code;
             this.mdlEstoque.ButtonImageExpand = ((System.Drawing.Image)(resources.GetObject("mdlEstoque.ButtonImageExpand")));
             this.mdlEstoque.CanvasColor = System.Drawing.SystemColors.Control;
+            this.mdlEstoque.Controls.Add(this.button5);
             this.mdlEstoque.Controls.Add(this.btLocaisEstoque);
             this.mdlEstoque.Controls.Add(this.btCaract);
             this.mdlEstoque.Controls.Add(this.btGrupos);
@@ -366,13 +373,13 @@
             this.mdlEstoque.DisabledBackColor = System.Drawing.Color.Empty;
             this.mdlEstoque.ExpandButtonAlignment = DevComponents.DotNetBar.eTitleButtonAlignment.Left;
             this.mdlEstoque.Expanded = false;
-            this.mdlEstoque.ExpandedBounds = new System.Drawing.Rectangle(1, 105, 298, 310);
+            this.mdlEstoque.ExpandedBounds = new System.Drawing.Rectangle(407, 183, 298, 339);
             this.mdlEstoque.ExpandOnTitleClick = true;
             this.mdlEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdlEstoque.HideControlsWhenCollapsed = true;
-            this.mdlEstoque.Location = new System.Drawing.Point(0, 104);
+            this.mdlEstoque.Location = new System.Drawing.Point(1, 103);
             this.mdlEstoque.Name = "mdlEstoque";
-            this.mdlEstoque.Size = new System.Drawing.Size(299, 26);
+            this.mdlEstoque.Size = new System.Drawing.Size(298, 27);
             this.mdlEstoque.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.mdlEstoque.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.mdlEstoque.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -408,11 +415,11 @@
             this.btLocaisEstoque.FlatAppearance.BorderSize = 0;
             this.btLocaisEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLocaisEstoque.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btLocaisEstoque.Location = new System.Drawing.Point(0, 278);
+            this.btLocaisEstoque.Location = new System.Drawing.Point(-1, 308);
             this.btLocaisEstoque.Name = "btLocaisEstoque";
-            this.btLocaisEstoque.Size = new System.Drawing.Size(300, 31);
+            this.btLocaisEstoque.Size = new System.Drawing.Size(299, 31);
             this.btLocaisEstoque.TabIndex = 18;
-            this.btLocaisEstoque.Text = "Locais de estoque";
+            this.btLocaisEstoque.Text = "Endereços de estoque";
             this.btLocaisEstoque.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btLocaisEstoque.UseVisualStyleBackColor = false;
             // 
@@ -426,7 +433,7 @@
             this.btCaract.ForeColor = System.Drawing.Color.Cornsilk;
             this.btCaract.Location = new System.Drawing.Point(-1, 247);
             this.btCaract.Name = "btCaract";
-            this.btCaract.Size = new System.Drawing.Size(300, 31);
+            this.btCaract.Size = new System.Drawing.Size(299, 31);
             this.btCaract.TabIndex = 17;
             this.btCaract.Text = "Características";
             this.btCaract.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -442,7 +449,7 @@
             this.btGrupos.ForeColor = System.Drawing.Color.Cornsilk;
             this.btGrupos.Location = new System.Drawing.Point(-2, 216);
             this.btGrupos.Name = "btGrupos";
-            this.btGrupos.Size = new System.Drawing.Size(300, 31);
+            this.btGrupos.Size = new System.Drawing.Size(299, 31);
             this.btGrupos.TabIndex = 16;
             this.btGrupos.Text = "Grupos de produtos";
             this.btGrupos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -458,7 +465,7 @@
             this.btUnidades.ForeColor = System.Drawing.Color.Cornsilk;
             this.btUnidades.Location = new System.Drawing.Point(-2, 185);
             this.btUnidades.Name = "btUnidades";
-            this.btUnidades.Size = new System.Drawing.Size(300, 31);
+            this.btUnidades.Size = new System.Drawing.Size(299, 31);
             this.btUnidades.TabIndex = 15;
             this.btUnidades.Text = "Unidades";
             this.btUnidades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -474,7 +481,7 @@
             this.button21.ForeColor = System.Drawing.Color.Cornsilk;
             this.button21.Location = new System.Drawing.Point(0, 149);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(300, 36);
+            this.button21.Size = new System.Drawing.Size(299, 36);
             this.button21.TabIndex = 14;
             this.button21.Text = "Saída";
             this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -490,7 +497,7 @@
             this.button20.ForeColor = System.Drawing.Color.Cornsilk;
             this.button20.Location = new System.Drawing.Point(0, 118);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(300, 31);
+            this.button20.Size = new System.Drawing.Size(299, 31);
             this.button20.TabIndex = 13;
             this.button20.Text = "Entrada";
             this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -506,7 +513,7 @@
             this.button14.ForeColor = System.Drawing.Color.Cornsilk;
             this.button14.Location = new System.Drawing.Point(0, 87);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(300, 31);
+            this.button14.Size = new System.Drawing.Size(299, 31);
             this.button14.TabIndex = 12;
             this.button14.Text = "Inventário";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -522,7 +529,7 @@
             this.btCadProd.ForeColor = System.Drawing.Color.Cornsilk;
             this.btCadProd.Location = new System.Drawing.Point(0, 26);
             this.btCadProd.Name = "btCadProd";
-            this.btCadProd.Size = new System.Drawing.Size(300, 31);
+            this.btCadProd.Size = new System.Drawing.Size(299, 31);
             this.btCadProd.TabIndex = 11;
             this.btCadProd.Text = "Cadastro de item";
             this.btCadProd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -538,7 +545,7 @@
             this.btConsItens.ForeColor = System.Drawing.Color.Cornsilk;
             this.btConsItens.Location = new System.Drawing.Point(-1, 57);
             this.btConsItens.Name = "btConsItens";
-            this.btConsItens.Size = new System.Drawing.Size(300, 31);
+            this.btConsItens.Size = new System.Drawing.Size(299, 31);
             this.btConsItens.TabIndex = 10;
             this.btConsItens.Text = "Consulta de items";
             this.btConsItens.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -559,13 +566,13 @@
             this.mdlVendas.DisabledBackColor = System.Drawing.Color.Empty;
             this.mdlVendas.ExpandButtonAlignment = DevComponents.DotNetBar.eTitleButtonAlignment.Left;
             this.mdlVendas.Expanded = false;
-            this.mdlVendas.ExpandedBounds = new System.Drawing.Rectangle(1, 53, 298, 180);
+            this.mdlVendas.ExpandedBounds = new System.Drawing.Rectangle(406, 196, 298, 180);
             this.mdlVendas.ExpandOnTitleClick = true;
             this.mdlVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdlVendas.HideControlsWhenCollapsed = true;
             this.mdlVendas.Location = new System.Drawing.Point(0, 52);
             this.mdlVendas.Name = "mdlVendas";
-            this.mdlVendas.Size = new System.Drawing.Size(299, 26);
+            this.mdlVendas.Size = new System.Drawing.Size(299, 27);
             this.mdlVendas.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.mdlVendas.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.mdlVendas.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -606,7 +613,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(300, 31);
             this.button13.TabIndex = 14;
-            this.button13.Text = "Entregas";
+            this.button13.Text = "Controle de Entregas / Delivery";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button13.UseVisualStyleBackColor = false;
             // 
@@ -654,7 +661,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(300, 31);
             this.button9.TabIndex = 11;
-            this.button9.Text = "SIG Smart Checkout";
+            this.button9.Text = "Smart Checkout";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = false;
             // 
@@ -681,6 +688,8 @@
             this.mdlFinanceiro.ButtonImageCollapse = global::Financeiro.Properties.Resources.circular_graphic_for_business_stats;
             this.mdlFinanceiro.ButtonImageExpand = global::Financeiro.Properties.Resources.circular_graphic_for_business_stats;
             this.mdlFinanceiro.CanvasColor = System.Drawing.SystemColors.Control;
+            this.mdlFinanceiro.Controls.Add(this.button3);
+            this.mdlFinanceiro.Controls.Add(this.button1);
             this.mdlFinanceiro.Controls.Add(this.button8);
             this.mdlFinanceiro.Controls.Add(this.button7);
             this.mdlFinanceiro.Controls.Add(this.btCaixa);
@@ -690,13 +699,13 @@
             this.mdlFinanceiro.DisabledBackColor = System.Drawing.Color.Empty;
             this.mdlFinanceiro.ExpandButtonAlignment = DevComponents.DotNetBar.eTitleButtonAlignment.Left;
             this.mdlFinanceiro.Expanded = false;
-            this.mdlFinanceiro.ExpandedBounds = new System.Drawing.Rectangle(396, 85, 298, 212);
+            this.mdlFinanceiro.ExpandedBounds = new System.Drawing.Rectangle(512, 205, 298, 306);
             this.mdlFinanceiro.ExpandOnTitleClick = true;
             this.mdlFinanceiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdlFinanceiro.HideControlsWhenCollapsed = true;
-            this.mdlFinanceiro.Location = new System.Drawing.Point(1, 26);
+            this.mdlFinanceiro.Location = new System.Drawing.Point(0, 26);
             this.mdlFinanceiro.Name = "mdlFinanceiro";
-            this.mdlFinanceiro.Size = new System.Drawing.Size(298, 26);
+            this.mdlFinanceiro.Size = new System.Drawing.Size(299, 26);
             this.mdlFinanceiro.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.mdlFinanceiro.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.mdlFinanceiro.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -735,7 +744,7 @@
             this.button8.ForeColor = System.Drawing.Color.Cornsilk;
             this.button8.Location = new System.Drawing.Point(-1, 181);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(299, 31);
+            this.button8.Size = new System.Drawing.Size(300, 31);
             this.button8.TabIndex = 15;
             this.button8.Text = "Comissões de vendedores";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -751,7 +760,7 @@
             this.button7.ForeColor = System.Drawing.Color.Cornsilk;
             this.button7.Location = new System.Drawing.Point(-1, 150);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(299, 31);
+            this.button7.Size = new System.Drawing.Size(300, 31);
             this.button7.TabIndex = 14;
             this.button7.Text = "Situação de clientes";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -767,7 +776,7 @@
             this.btCaixa.ForeColor = System.Drawing.Color.Cornsilk;
             this.btCaixa.Location = new System.Drawing.Point(0, 119);
             this.btCaixa.Name = "btCaixa";
-            this.btCaixa.Size = new System.Drawing.Size(299, 31);
+            this.btCaixa.Size = new System.Drawing.Size(300, 31);
             this.btCaixa.TabIndex = 13;
             this.btCaixa.Text = "Caixa";
             this.btCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -783,7 +792,7 @@
             this.btFormasPag.ForeColor = System.Drawing.Color.Cornsilk;
             this.btFormasPag.Location = new System.Drawing.Point(0, 88);
             this.btFormasPag.Name = "btFormasPag";
-            this.btFormasPag.Size = new System.Drawing.Size(299, 31);
+            this.btFormasPag.Size = new System.Drawing.Size(300, 31);
             this.btFormasPag.TabIndex = 12;
             this.btFormasPag.Text = "Formas de pagamento";
             this.btFormasPag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -799,7 +808,7 @@
             this.btMovimentos.ForeColor = System.Drawing.Color.Cornsilk;
             this.btMovimentos.Location = new System.Drawing.Point(0, 26);
             this.btMovimentos.Name = "btMovimentos";
-            this.btMovimentos.Size = new System.Drawing.Size(299, 31);
+            this.btMovimentos.Size = new System.Drawing.Size(300, 31);
             this.btMovimentos.TabIndex = 11;
             this.btMovimentos.Text = "Movimentos";
             this.btMovimentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -815,7 +824,7 @@
             this.btTiposMov.ForeColor = System.Drawing.Color.Cornsilk;
             this.btTiposMov.Location = new System.Drawing.Point(-1, 57);
             this.btTiposMov.Name = "btTiposMov";
-            this.btTiposMov.Size = new System.Drawing.Size(299, 31);
+            this.btTiposMov.Size = new System.Drawing.Size(300, 31);
             this.btTiposMov.TabIndex = 10;
             this.btTiposMov.Text = "Tipos de movimento";
             this.btTiposMov.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -829,6 +838,8 @@
             this.mdlAdministracao.ButtonImageCollapse = global::Financeiro.Properties.Resources.old_building;
             this.mdlAdministracao.ButtonImageExpand = global::Financeiro.Properties.Resources.old_building;
             this.mdlAdministracao.CanvasColor = System.Drawing.SystemColors.Control;
+            this.mdlAdministracao.Controls.Add(this.button4);
+            this.mdlAdministracao.Controls.Add(this.btFuncionarios);
             this.mdlAdministracao.Controls.Add(this.btEmpresa);
             this.mdlAdministracao.Controls.Add(this.button2);
             this.mdlAdministracao.DisabledBackColor = System.Drawing.Color.Empty;
@@ -836,9 +847,9 @@
             this.mdlAdministracao.ExpandOnTitleClick = true;
             this.mdlAdministracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdlAdministracao.HideControlsWhenCollapsed = true;
-            this.mdlAdministracao.Location = new System.Drawing.Point(492, 84);
+            this.mdlAdministracao.Location = new System.Drawing.Point(407, 115);
             this.mdlAdministracao.Name = "mdlAdministracao";
-            this.mdlAdministracao.Size = new System.Drawing.Size(298, 88);
+            this.mdlAdministracao.Size = new System.Drawing.Size(298, 148);
             this.mdlAdministracao.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.mdlAdministracao.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.mdlAdministracao.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -1142,6 +1153,8 @@
             this.informBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.informBar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.informBar.Controls.Add(this.lbTela);
+            this.informBar.Controls.Add(this.pictureBox1);
             this.informBar.Controls.Add(this.imgIconeNotificacao);
             this.informBar.Controls.Add(this.lbSair);
             this.informBar.Controls.Add(this.lbNotificacao);
@@ -1150,6 +1163,29 @@
             this.informBar.Name = "informBar";
             this.informBar.Size = new System.Drawing.Size(1008, 27);
             this.informBar.TabIndex = 5;
+            // 
+            // lbTela
+            // 
+            this.lbTela.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbTela.AutoSize = true;
+            this.lbTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTela.ForeColor = System.Drawing.Color.White;
+            this.lbTela.Location = new System.Drawing.Point(453, 5);
+            this.lbTela.Name = "lbTela";
+            this.lbTela.Size = new System.Drawing.Size(102, 16);
+            this.lbTela.TabIndex = 14;
+            this.lbTela.Text = "INICIALIZANDO";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Financeiro.Properties.Resources.windows;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(417, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // imgIconeNotificacao
             // 
@@ -1378,6 +1414,86 @@
             this.labelX1.TabIndex = 14;
             this.labelX1.Text = "Empresa - Cidade";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Navy;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button1.Location = new System.Drawing.Point(0, 212);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(300, 31);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Contas a pagar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.Navy;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button3.Location = new System.Drawing.Point(0, 243);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(300, 31);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Contas a receber";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.Navy;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button4.Location = new System.Drawing.Point(0, 86);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(298, 31);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Grupos de usuários / privilégios";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.Navy;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button5.Location = new System.Drawing.Point(0, 277);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(299, 31);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Armazéns";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.Navy;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button6.Location = new System.Drawing.Point(0, 88);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(300, 31);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Transportadoras";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1407,6 +1523,7 @@
             this.menuStrip1.PerformLayout();
             this.informBar.ResumeLayout(false);
             this.informBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIconeNotificacao)).EndInit();
             this.barraTarefas.ResumeLayout(false);
             this.barraTarefas.PerformLayout();
@@ -1505,6 +1622,13 @@
         private System.Windows.Forms.ToolStripButton btExcluir;
         private System.Windows.Forms.ToolStripButton btRefresh;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lbTela;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

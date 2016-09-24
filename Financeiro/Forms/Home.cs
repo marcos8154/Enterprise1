@@ -88,8 +88,8 @@ namespace Financeiro
 
         private void btUsuarios_Click(object sender, EventArgs e)
         {
-         //   IManagedUserControl muc = new UC_Usuarios();
-         //   windowManager.AddOrShow(muc, "Usuários", "UC_USR-4575", false);
+            IManagedUserControl muc = new CadastroUsuarios();
+            windowManager.AddOrShow(muc, "Usuários", "UC_USR-4575", false);
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,12 +111,12 @@ namespace Financeiro
 
         private void Home_Load(object sender, EventArgs e)
         {
-            windowManager.RestoreState();
             windowManager.menuJanela = menuJanela;
             windowManager.BarraTarefas = barraTarefas;
-            Notificacao.Inicializar(imgIconeNotificacao, lbNotificacao);
+            Notificacao.Inicializar(imgIconeNotificacao, lbNotificacao, lbTela);
             NonManagedWindows.Initialize();
             NonManagedWindows.WindowManager = windowManager;
+           // windowManager.RestoreState();
         }
 
         private void btTiposMov_Click(object sender, EventArgs e)
@@ -191,7 +191,7 @@ namespace Financeiro
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            windowManager.CurrentUserControl.Reload();
+            windowManager.CurrentUserControl.OnReload();
         }
     }
 }
